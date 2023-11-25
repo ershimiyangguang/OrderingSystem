@@ -1,4 +1,4 @@
-package cn.edu.cugb.util;
+package cn.edu.cugb.utils;
 
 import javax.sql.DataSource;
 import java.io.PrintWriter;

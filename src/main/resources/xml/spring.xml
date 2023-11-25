@@ -7,7 +7,7 @@
 
     <context:property-placeholder location="./properties/jdbc-config.properties"/>
 <!--util层-->
-    <bean id="ProjectDataSource" class="cn.edu.cugb.util.ProjectDataSource">
+    <bean id="ProjectDataSource" class="cn.edu.cugb.utils.ProjectDataSource">
         <property name="driver" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.username}"/>
