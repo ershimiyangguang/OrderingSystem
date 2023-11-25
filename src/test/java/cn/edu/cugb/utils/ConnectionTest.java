@@ -1,4 +1,4 @@
-package cn.edu.cugb.util;
+package cn.edu.cugb.utils;
 
 import org.junit.*;
 import org.springframework.context.ApplicationContext;

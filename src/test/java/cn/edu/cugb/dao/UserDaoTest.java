@@ -1,8 +1,8 @@
-package cn.edu.cugb.service;
+package cn.edu.cugb.dao;
 
 import org.junit.*;
 
-public class ServiceTest {
+public class UserDaoTest {
     @Before
     public void SetUp() throws Exception {
     }
@@ -12,7 +12,7 @@ public class ServiceTest {
     }
 
     @Test
-    public void ServiceTest() throws Exception {
+    public void DaoTest() throws Exception {
 
     }
 }
