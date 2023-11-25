@@ -2,7 +2,9 @@ package cn.edu.cugb.bean;
 
 
 public class Message<T> {
-    /*状态码, 状态码为0表示无问题,状态码为x表示第x个参数有误*/
+    /*状态码,
+    * 状态码为0表示无问题
+    * 状态码为x表示第x个参数有误*/
     private int code;
     /*错误原因
     * 状态码为0时可不写*/
