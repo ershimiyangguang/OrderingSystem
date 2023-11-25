@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class UserDaoImpl implements UserDao {
     JdbcTemplate jdbcTemplate;
     @Override
-    public Message<User> getUserByName(String uid) {
+    public Message<User> getUserById(String uid) {
         return null;
     }
 }

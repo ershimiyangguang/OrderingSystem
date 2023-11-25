@@ -8,5 +8,5 @@ public interface UserDao {
     * 参数: User的id
     * 存在返回User
     * 不存在返回null*/
-    Message<User> getUserByName(String uid);
+    Message<User> getUserById(String uid);
 }
