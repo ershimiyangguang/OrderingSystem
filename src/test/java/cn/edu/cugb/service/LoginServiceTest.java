@@ -1,8 +1,8 @@
-package cn.edu.cugb.servlet;
+package cn.edu.cugb.service;
 
 import org.junit.*;
 
-public class Servlet1Test {
+public class LoginServiceTest {
     @Before
     public void SetUp() throws Exception {
     }
@@ -12,7 +12,7 @@ public class Servlet1Test {
     }
 
     @Test
-    public void Servlet1Test() throws Exception {
+    public void ServiceTest() throws Exception {
 
     }
 }

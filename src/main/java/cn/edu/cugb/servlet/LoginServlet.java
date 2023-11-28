@@ -1,7 +1,5 @@
 package cn.edu.cugb.servlet;
 
-import java.io.*;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,13 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Servlet1")
-public class Servlet1 extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     private String message;
 
     public void init() {
 
     }
-
+    /*登录
+    * 参数: uid=账号, password=密码
+    * 登录成功跳转到main页面
+    * 登录失败返回message的code与reason*/
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
