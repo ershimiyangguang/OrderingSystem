@@ -1,92 +1,69 @@
 package cn.edu.cugb.bean;
 
-import java.sql.Date;
-
 public class User {
-    /*密码*/
-    private int uid;
-    /*用户名*/
-    private String uname;
-    /*密码*/
-    private String password;
-    /*创建日期*/
-    private Date createdate;
+    private  Integer uId;
+    private  String uName;
+    private  String uPassword;
+
 
     public User() {
     }
 
-    public User(int uid, String uname, String password, Date createdate) {
-        this.uid = uid;
-        this.uname = uname;
-        this.password = password;
-        this.createdate = createdate;
+    public User(Integer uId, String uName, String uPassword) {
+        this.uId = uId;
+        this.uName = uName;
+        this.uPassword = uPassword;
     }
 
     /**
      * 获取
-     * @return uid
+     * @return uId
      */
-    public int getUid() {
-        return uid;
+    public Integer getUId() {
+        return uId;
     }
 
     /**
      * 设置
-     * @param uid
+     * @param uId
      */
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setUId(Integer uId) {
+        this.uId = uId;
     }
 
     /**
      * 获取
-     * @return uname
+     * @return uName
      */
-    public String getUname() {
-        return uname;
+    public String getUName() {
+        return uName;
     }
 
     /**
      * 设置
-     * @param uname
+     * @param uName
      */
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setUName(String uName) {
+        this.uName = uName;
     }
 
     /**
      * 获取
-     * @return password
+     * @return uPassword
      */
-    public String getPassword() {
-        return password;
+    public String getUPassword() {
+        return uPassword;
     }
 
     /**
      * 设置
-     * @param password
+     * @param uPassword
      */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
-     * 获取
-     * @return createdate
-     */
-    public Date getCreatedate() {
-        return createdate;
-    }
-
-    /**
-     * 设置
-     * @param createdate
-     */
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setUPassword(String uPassword) {
+        this.uPassword = uPassword;
     }
 
     public String toString() {
-        return "User{uid = " + uid + ", uname = " + uname + ", password = " + password + ", createdate = " + createdate + "}";
+        return "User{uId = " + uId + ", uName = " + uName + ", uPassword = " + uPassword + "}";
     }
 }
