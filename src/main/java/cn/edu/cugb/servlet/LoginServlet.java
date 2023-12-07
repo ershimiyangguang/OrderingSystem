@@ -1,5 +1,8 @@
 package cn.edu.cugb.servlet;
 
+import cn.edu.cugb.service.LoginService;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
