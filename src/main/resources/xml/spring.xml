@@ -26,14 +26,14 @@
 <!--dao层-->
 <!--service层-->
 
-    <bean id="LoginService" class="cn.edu.cugb.service.LoginService"/>
-    <bean id="RegisterService" class="cn.edu.cugb.service.RegisterService"/>
-    <bean id="addOrderService" class="cn.edu.cugb.service.addOrderService"/>
-    <bean id="BuyService" class="cn.edu.cugb.service.BuyService"/>
-    <bean id="DishNumberService" class="cn.edu.cugb.service.DishNumberService"/>
-    <bean id="DishplayDishListService" class="cn.edu.cugb.service.DisplayDishListService"/>
-    <bean id="DishplayOneDishService" class="cn.edu.cugb.service.DisplayOneDishService"/>
-    <bean id="GetOrderService" class="cn.edu.cugb.service.GetOrderService"/>
-    <bean id="GetShoppingCartService" class="cn.edu.cugb.service.GetShoppingCartService"/>
+    <bean id="LoginService" class="cn.edu.cugb.service.impl.LoginServiceImpl"/>
+    <bean id="RegisterService" class="cn.edu.cugb.service.impl.RegisterServiceImpl"/>
+    <bean id="addOrderService" class="cn.edu.cugb.service.impl.addOrderServiceImpl"/>
+    <bean id="BuyService" class="cn.edu.cugb.service.impl.BuyServiceImpl"/>
+    <bean id="DishNumberService" class="cn.edu.cugb.service.impl.DishNumberServiceImpl"/>
+    <bean id="DishplayDishListService" class="cn.edu.cugb.service.impl.DisplayDishListServiceImpl"/>
+    <bean id="DishplayOneDishService" class="cn.edu.cugb.service.impl.DisplayOneDishServiceImpl"/>
+    <bean id="GetOrderService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
+    <bean id="GetShoppingCartService" class="cn.edu.cugb.impl.service.GetShoppingCartServiceImpl"/>
 
 </beans>
