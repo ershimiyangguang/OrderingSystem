@@ -20,7 +20,7 @@ public class UserDaoImpl implements cn.edu.cugb.dao.UserDao {
         try {
             user = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class),uname);
         }
-         catch(Exception e){
+         catch(EmptyResultDataAccessException e){
            // e.printStackTrace();
            // e.getMessage();
             return null;

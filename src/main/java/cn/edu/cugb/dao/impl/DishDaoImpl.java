@@ -1,6 +1,7 @@
 package cn.edu.cugb.dao.impl;
 
 import cn.edu.cugb.bean.Dish;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -30,7 +31,16 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
 
     @Override
     public Dish getDishById(int dId) {
-        return null;
+        String sql="select *from dish where d_id=?";
+        Dish dish=null;
+        try{
+             dish = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Dish.class), dId);
+        }
+        catch (EmptyResultDataAccessException e){
+
+            return null;
+        }
+        return dish;
     }
 
 
