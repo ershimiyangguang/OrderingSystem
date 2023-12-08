@@ -2,15 +2,15 @@
 ## 1. 登录
 ### dao层
 -[ ] UserDao
-  - User getUserById(String uid);
-    - uid: user的账号
-    - 根据uid查询user
+  - User getUserById(String uname);
+    - uname: 用户名
+    - 根据用户名字查询user
     - 查找到:user
     - 没查到:null
 ### service层
 -[ ] LoginService
-  - Message\<User\> login(String uid, String upassword, String key, String value);
-    - uid: 用户账号
+  - Message\<User\> login(String uname, String upassword, String key, String value);
+    - uname: 用户名
     - upassword: 用户密码
     - key: 验证码编号
     - value: 验证码值
@@ -21,7 +21,7 @@
     - 有误:code, reason, null
 ### servlet层
 -[ ] LoginServlet
-  - uid: 账号
+  - uname: 用户名
   - upassword: 密码
   - key: 验证码编号
   - value: 验证码值
@@ -52,7 +52,7 @@
     - 判断验证码是否正确（验证码键值对存放在resources/properties/verification-code.properties文件中）
     - 判断是否有属性为空字符串或null
     - 判断输入的内容是否可行（账号密码只能由数字、英文构成，用户名无所谓，字符串长度都在1—25）
-    - 账号为10位纯数字，不能有重复
+    - 用户名由数字与英文组成，不能有重复
     - 判断两次输入的密码是否相同
     - 无误:0, null, null
     - 有误:code, reason, null
@@ -120,7 +120,7 @@
     - 不存在:null
 ### servlet层
 -[ ] DisplayOneDishServlet
-  - page: 第几页的菜单
+  - index: 第几道菜（从0开始计算）
     - 存在:{dId:, dName:, dPrice:, dDescription:, dImage}
     - 不存在:{dId:-1}
 ### view层
@@ -128,16 +128,17 @@
 ## 订购
 ### dao层
 -[ ] OrderDao
-  - boolean addOrder(int uid, int did, int count);
-    - uid: 用户id
+  - boolean addOrder(String uname, int did, int count);
+    - uname: 用户名
     - did: 菜id
     - count: 数量
     - 添加成功: true
     - 添加失败: false
 ### service层
 -[ ] addOrderService
-  - boolean addOrder(String uid, String did, int count);
-    - uid: 用户id
+  - boolean addOrder(String uid, int did, int count);
+    - uname:用户名
+
     - did: 菜id
     - count: 数量
     - 添加成功: true
@@ -151,16 +152,17 @@
 ## 7. 展示购物车
 ### dao层
 -[ ] OrderDao
-  - List<Order> getOrderByUid(int uid, int isShop);
-    - uid: 用户账号
+
+  - List<Order> getOrderByUid(String uname, int isShop);
+    - uname: 用户名
     - isShop: 1表示返回已付款的订单，0表示返回未付款的订单（购物车）
     - 返回所有uid为此用户的Order
     - 存在:List\<Order>
     - 不存在:null
 ### service层
 -[ ] GetShoppingCartService
-  - Map\<Dish,Integer> getShoppingCart(String uid);
-    - uid: 用户账号
+  - Map\<Dish,Integer> getShoppingCart(String uname);
+    - uname: 用户名
     - Map中储存Dish以及对应的数量
     - 存在: Map\<Dish,Integer>
     - 不存在:null
@@ -176,15 +178,15 @@
 ## 8. 展示订单
 ### dao层
 -[ ] OrderDao
-  - List<Order> getOrderByUid(int uid);
-    - uid: 用户账号
-    - 返回所有uid为此用户的Order
+  - List<Order> getOrderByUid(String uname);
+    - uname: 用户名
+    - 返回所有uname为此用户的Order
     - 存在:List\<Order>
     - 不存在:null
 ### service层
 -[ ] GetOrderService
-  - Map\<Dish,Integer> GetOrder(String uid);
-    - uid: 用户账号
+  - Map\<Dish,Integer> GetOrder(String uname);
+    - uname: 用户名
     - Map中储存Dish以及对应的数量
     - 存在: Map\<Dish,Integer>
     - 不存在:null
@@ -200,21 +202,21 @@
 ## 9. 购买
 ### dao层
 -[ ] OrderDao
-  - boolean UpdateOrderStateByUid(int uid);
-    - uid: 用户账号
-    - 将uid为此用户的所有order都改成已支付
+  - boolean UpdateOrderStateByUid(String uname);
+    - uname: 用户名
+    - 将uname为此用户的所有order都改成已支付
     - 成功:true
     - 不成功:false
 ### service层
 -[ ] BuyService
-  - Map\<Dish,Integer> buyOrder(String uid);
-    - uid: 用户账号
-    - 将uid为此用户的所有order都改成已支付
+  - Map\<Dish,Integer> buyOrder(String uname);
+    - uname: 用户名
+    - 将uname为此用户的所有order都改成已支付
     - 成功:true
     - 不成功:false
 ### servlet层
 -[ ] BuyServlet
-  - uid: 用户账号
-  - 将uid为此用户的所有order都改成已支付
+  - uname: 用户名
+  - 将uname为此用户的所有order都改成已支付
   - 成功:{code:0}
   - 不成功:{code:1}

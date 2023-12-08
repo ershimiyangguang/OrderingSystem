@@ -7,7 +7,7 @@ import java.util.Map;
 public class GetOrderServiceImpl implements GetOrderService {
 
     @Override
-    public Map<Dish, Integer> GetOrder(String uid) {
+    public Map<Dish, Integer> GetOrder(String uname) {
         return null;
     }
 }

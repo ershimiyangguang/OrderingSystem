@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class BuyServiceImpl implements BuyService {
     @Override
-    public Map<Dish, Integer> buyOrder(String uid) {
+    public Map<Dish, Integer> buyOrder(String uname) {
         return null;
     }
 }
