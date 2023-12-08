@@ -7,7 +7,7 @@ public interface LoginService {
     /*登录
     * 参数: 用户id, 用户密码
     * 判断输入信息是否有误*/
-    Message<User> login(String uid, String password);
+    Message<User> login(String uname, String password);
 
 
 
