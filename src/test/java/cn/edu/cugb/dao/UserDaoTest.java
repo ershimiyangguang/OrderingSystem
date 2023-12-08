@@ -21,7 +21,7 @@ public class UserDaoTest {
     public void addUser(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         UserDaoImpl userDaoImpl = applicationContext.getBean("userDao", UserDaoImpl.class);
-        User user=new User("王五","123456");
+        User user=new User("wangwu","123456");
         boolean bool = userDaoImpl.addUser(user);
         System.out.println(bool);
     }

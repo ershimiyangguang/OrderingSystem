@@ -13,7 +13,7 @@ public class DishTest {
     public void dishTest() throws Exception {
         ApplicationContext applicationContext= new ClassPathXmlApplicationContext("xml/spring.xml");
         JdbcTemplate jdbcTemplate = applicationContext.getBean("JdbcTemplate", JdbcTemplate.class);
-        String sql="select *from dish";
+        String sql="select * from dish";
         List<Dish> dishes = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Dish.class));
         System.out.println(dishes);
     }

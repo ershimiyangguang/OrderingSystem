@@ -206,7 +206,7 @@
     - uname: 用户名
     - 将uname为此用户的所有order都改成已支付
     - 成功:true
-    - 不成功:false
+    - 不成功(没有记录可更改，即购物车为空):false
 ### service层
 -[ ] BuyService
   - Map\<Dish,Integer> buyOrder(String uname);
