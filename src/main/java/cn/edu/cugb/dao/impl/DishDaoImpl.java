@@ -19,6 +19,8 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
         Integer tools = jdbcTemplate.queryForObject(sql, int.class);
         return tools;
     }
+
+    @Override
     public List getDishList(int start, int length){
         String sql="select *from dish limit ?,?";
         List<Dish> dishes=null;

@@ -1,30 +1,59 @@
-create database ordersystem
-use ordersystem
 
-create table users
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2023/12/8 10:40:08                           */
+/*==============================================================*/
+
+
+drop table if exists Users;
+
+drop table if exists dish;
+
+drop table if exists orders;
+
+/*==============================================================*/
+/* Table: Users                                                 */
+/*==============================================================*/
+create table Users
 (
-    u_id                 integer                        not null,
-    u_name               varchar(50)                    null,
-    u_password           varchar(50)                    null,
-    constraint PK_USERS primary key (u_id)
+    u_name               varchar(50) not null,
+    u_password           varchar(50),
+    primary key (u_name)
 );
+
+/*==============================================================*/
+/* Table: dish                                                  */
+/*==============================================================*/
 create table dish
 (
-    d_id                 integer                        not null,
-    d_name               varchar(50)                    null,
-    d_price              integer                        null,
-    d_description        varchar(50)                    null,
-    d_image              varchar(50)                    null,
-    constraint PK_DISH primary key (d_id)
+    d_id                 int not null,
+    d_name               varchar(50),
+    d_price              int,
+    d_description        varchar(50),
+    d_image              varchar(50),
+    primary key (d_id)
 );
+
+/*==============================================================*/
+/* Table: orders                                                */
+/*==============================================================*/
 create table orders
 (
-    d_id                 integer                        not null,
-    u_id                 integer                        not null,
-    o_count              integer                        null,
-    o_state              smallint                       null,
-    constraint PK_ORDER primary key (d_id, u_id)
+    d_id                 int not null,
+    u_name               varchar(50) not null,
+    o_count              int,
+    o_state              smallint,
+    primary key (d_id, u_name)
 );
+
+alter table orders add constraint FK_orders foreign key (u_name)
+    references Users (u_name) on delete restrict on update restrict;
+
+alter table orders add constraint FK_orders2 foreign key (d_id)
+    references dish (d_id) on delete restrict on update restrict;
+/*==============================================================*/
+/* 插入数据                                              */
+/*==============================================================*/
 INSERT INTO `dish`  VALUES
                         (1, '皮蛋瘦肉粥', 5.00, '美味可口!', 'images/500022.jpg'),
                         (2, '清炒时蔬', 5.00, '时令绿色蔬菜', 'images/500046.jpg'),
@@ -44,9 +73,11 @@ INSERT INTO `dish`  VALUES
                         (16, '刀削面', 6.00, '配料：青菜、猪肉、海带、骨头汤口味：微辣、中辣、超辣。', 'images/500023.jpg'),
                         (17, '青菜肉丝粥', 4.00, '原料：青菜、肉丝口味清淡，清香可口！', 'images/500022.jpg'),
                         (18, '土豆丝盖饭', 7.00, '好好吃哦', 'images/500008.jpg');
+
+
 INSERT INTO `users`  VALUES
-                         (1, '张三', '1234'),
-                         (2, 'test', '1234');
+                         ( '张三', '1234'),
+                         ( 'test', '1234');
 insert into orders VALUES
-                       (1,1,5,0),
-                       (1,2,5,0);
+                       (1,'test',5,0),
+                       (2,'test',5,0);

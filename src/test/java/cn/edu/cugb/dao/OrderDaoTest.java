@@ -10,26 +10,26 @@ public class OrderDaoTest {
     public  void addOrderTest(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
-        System.out.println(orderDao.addOrder(2, 1, 5));
+        System.out.println(orderDao.addOrder("test", 1, 5));
     }
     @Test
-    public void getOrderByuid(){
+    public void getOrderByuname(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
-        System.out.println(orderDao.getOrderByUid(1, 0));
-        System.out.println(orderDao.getOrderByUid(2, 1));
+        System.out.println(orderDao.getOrderByUname("test", 0));
+        System.out.println(orderDao.getOrderByUname("test", 1));
     }
     @Test
-    public  void getOrderByuid2(){
+    public  void getOrderByuname2(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
-        System.out.println(orderDao.getOrderByUid(1));
+        System.out.println(orderDao.getOrderByUname("test"));
     }
     @Test
-    public void updateOrderStateByuid(){
+    public void updateOrderStateByuname(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
-        System.out.println(orderDao.UpdateOrderStateByUid(1));
-        System.out.println(orderDao.UpdateOrderStateByUid(3));
+        System.out.println(orderDao.UpdateOrderStateByUname("test"));
+        System.out.println(orderDao.UpdateOrderStateByUname("lisi"));
     }
 }

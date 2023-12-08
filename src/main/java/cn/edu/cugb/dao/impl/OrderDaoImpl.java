@@ -14,13 +14,14 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
     @Override
-    public boolean addOrder(int uid, int did, int count){
+    public boolean addOrder(String uname, int did, int count){
         boolean flag=true;
-        String sql="insert into orders (u_id,d_id,o_count) values(?,?,?)";
+        String sql="insert into orders (u_name,d_id,o_count) values(?,?,?)";
 
        try{
-           jdbcTemplate.update(sql, uid, did, count);
+           jdbcTemplate.update(sql, uname, did, count);
        }
        catch (DuplicateKeyException e){
            flag = false;
@@ -28,21 +29,27 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
 
         return  flag;
     }
-    @Override
-    public List getOrderByUid(int uid, int isshop){
-        String sql="select *from orders where u_id=? and o_state=?";
-        List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uid, isshop);
-        return orders;
-    }
-   public  List getOrderByUid(int uid){
-        String sql="select *from orders where u_id=?";
-       List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uid);
+
+
+   @Override
+   public  List getOrderByUname(String uname){
+        String sql="select *from orders where u_name=?";
+       List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uname);
        return orders;
    }
-    public boolean UpdateOrderStateByUid(int uid){
+   @Override
+   public List getOrderByUname(String uname, int isshop){
+       String sql="select *from orders where u_name=? and o_state=?";
+       List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uname,isshop);
+       return orders;
+   }
+
+    @Override
+    public boolean UpdateOrderStateByUname(String uname){
         boolean flag=true;
-        String sql="update orders set o_state=1 where u_id=?";
-        int i = jdbcTemplate.update(sql, uid);
+        String sql="update orders set o_state=1 where u_name=?";
+        int i = jdbcTemplate.update(sql, uname);
+
         if (i==0)
             flag=false;
         return flag;
