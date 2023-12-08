@@ -24,6 +24,15 @@
 
 
 <!--dao层-->
+    <bean id="userDao" class="cn.edu.cugb.dao.impl.UserDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
+    <bean id="dishDao" class="cn.edu.cugb.dao.impl.DishDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
+    <bean id="orderDao" class="cn.edu.cugb.dao.impl.OrderDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
 <!--service层-->
 
     <bean id="LoginService" class="cn.edu.cugb.service.impl.LoginServiceImpl"/>
