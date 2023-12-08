@@ -23,7 +23,7 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
        try{
            jdbcTemplate.update(sql, uname, did, count);
        }
-       catch (DuplicateKeyException e){
+       catch (Exception e){
            flag = false;
        }
 

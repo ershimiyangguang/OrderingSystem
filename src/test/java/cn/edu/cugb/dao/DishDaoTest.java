@@ -18,5 +18,13 @@ public class DishDaoTest {
         DishDaoImpl dishDao = applicationContext.getBean("dishDao", DishDaoImpl.class);
         System.out.println(dishDao.getDishList(0, 20));
     }
+    @Test
+    public void getDishById(){
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
+        DishDaoImpl dishDao = applicationContext.getBean("dishDao", DishDaoImpl.class);
+        System.out.println(dishDao.getDishById(2));
+        System.out.println(dishDao.getDishById(20));
+    }
+
 
 }
