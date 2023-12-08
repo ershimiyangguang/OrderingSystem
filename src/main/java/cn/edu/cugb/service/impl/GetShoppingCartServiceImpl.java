@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class GetShoppingCartServiceImpl implements GetShoppingCartService {
     @Override
-    public Map<Dish, Integer> getShoppingCart(int uid) {
+    public Map<Dish, Integer> getShoppingCart(String uid) {
         return null;
     }
 }
