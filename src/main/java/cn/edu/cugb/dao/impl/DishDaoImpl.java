@@ -13,13 +13,13 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
     @Override
     public int getDishNumber(){
         String sql="select count(*) from dish";
         Integer tools = jdbcTemplate.queryForObject(sql, int.class);
         return tools;
     }
+
     @Override
     public List getDishList(int start, int length){
         String sql="select *from dish limit ?,?";

@@ -5,5 +5,5 @@ import cn.edu.cugb.bean.Dish;
 import java.util.Map;
 
 public interface BuyService {
-    Map<Dish,Integer> BuyOrder(int uid);
+    Map<Dish,Integer> buyOrder(String uname);
 }

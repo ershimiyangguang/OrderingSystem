@@ -1,27 +1,17 @@
 package cn.edu.cugb.dao.impl;
 
 import cn.edu.cugb.bean.User;
-<<<<<<< Updated upstream
 import cn.edu.cugb.dao.UserDao;
-=======
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
->>>>>>> Stashed changes
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UserDaoImpl implements cn.edu.cugb.dao.UserDao {
     JdbcTemplate jdbcTemplate;
-<<<<<<< Updated upstream
-    @Override
-    public Message<User> getUserById(String uid) {
-        return null;
-    }
-=======
-
+  
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-
 
     @Override
     public User getUserByName(String uname) {
@@ -37,6 +27,7 @@ public class UserDaoImpl implements cn.edu.cugb.dao.UserDao {
         }
         return user;
     }
+  
     @Override
     public boolean addUser(User user){
         boolean flag=true;
@@ -48,6 +39,4 @@ public class UserDaoImpl implements cn.edu.cugb.dao.UserDao {
         }
         return flag;
     }
-
->>>>>>> Stashed changes
 }

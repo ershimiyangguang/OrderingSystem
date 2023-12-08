@@ -24,16 +24,25 @@
 
 
 <!--dao层-->
+    <bean id="userDao" class="cn.edu.cugb.dao.impl.UserDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
+    <bean id="dishDao" class="cn.edu.cugb.dao.impl.DishDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
+    <bean id="orderDao" class="cn.edu.cugb.dao.impl.OrderDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
 <!--service层-->
 
     <bean id="LoginService" class="cn.edu.cugb.service.impl.LoginServiceImpl"/>
     <bean id="RegisterService" class="cn.edu.cugb.service.impl.RegisterServiceImpl"/>
-    <bean id="addOrderService" class="cn.edu.cugb.service.impl.addOrderServiceImpl"/>
+    <bean id="addOrderService" class="cn.edu.cugb.service.impl.AddOrderServiceImpl"/>
     <bean id="BuyService" class="cn.edu.cugb.service.impl.BuyServiceImpl"/>
     <bean id="DishNumberService" class="cn.edu.cugb.service.impl.DishNumberServiceImpl"/>
-    <bean id="DishplayDishListService" class="cn.edu.cugb.service.impl.DisplayDishListServiceImpl"/>
-    <bean id="DishplayOneDishService" class="cn.edu.cugb.service.impl.DisplayOneDishServiceImpl"/>
+    <bean id="DisplayDishListService" class="cn.edu.cugb.service.impl.DisplayDishListServiceImpl"/>
+    <bean id="DisplayOneDishService" class="cn.edu.cugb.service.impl.DisplayOneDishServiceImpl"/>
     <bean id="GetOrderService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
-    <bean id="GetShoppingCartService" class="cn.edu.cugb.impl.service.GetShoppingCartServiceImpl"/>
+    <bean id="GetShoppingCartService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
 
 </beans>

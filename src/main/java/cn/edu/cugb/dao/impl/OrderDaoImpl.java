@@ -49,6 +49,7 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
         boolean flag=true;
         String sql="update orders set o_state=1 where u_name=?";
         int i = jdbcTemplate.update(sql, uname);
+
         if (i==0)
             flag=false;
         return flag;
