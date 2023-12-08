@@ -52,7 +52,7 @@
     - 判断验证码是否正确（验证码键值对存放在resources/properties/verification-code.properties文件中）
     - 判断是否有属性为空字符串或null
     - 判断输入的内容是否可行（账号密码只能由数字、英文构成，用户名无所谓，字符串长度都在1—25）
-    - 用户名由数字与英文组成，不能由重复
+    - 用户名由数字与英文组成，不能有重复
     - 判断两次输入的密码是否相同
     - 无误:0, null, null
     - 有误:code, reason, null
@@ -138,6 +138,7 @@
 -[ ] addOrderService
   - boolean addOrder(String uid, int did, int count);
     - uname:用户名
+
     - did: 菜id
     - count: 数量
     - 添加成功: true
@@ -151,6 +152,7 @@
 ## 7. 展示购物车
 ### dao层
 -[ ] OrderDao
+
   - List<Order> getOrderByUid(String uname, int isShop);
     - uname: 用户名
     - isShop: 1表示返回已付款的订单，0表示返回未付款的订单（购物车）
