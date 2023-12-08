@@ -13,7 +13,7 @@ public class OrderTest {
     public void orderTest(){
         ApplicationContext applicationContext= new ClassPathXmlApplicationContext("xml/spring.xml");
         JdbcTemplate jdbcTemplate = applicationContext.getBean("JdbcTemplate", JdbcTemplate.class);
-        String sql="select *from orders";
+        String sql="select * from orders";
         List<Order> dishes = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class));
         System.out.println(dishes);
     }

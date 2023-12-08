@@ -32,13 +32,13 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
 
 
    @Override
-   public  List getOrderByUname(String uname){
+   public  List<Order> getOrderByUname(String uname){
         String sql="select *from orders where u_name=?";
        List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uname);
        return orders;
    }
    @Override
-   public List getOrderByUname(String uname, int isshop){
+   public List<Order> getOrderByUname(String uname, int isshop){
        String sql="select *from orders where u_name=? and o_state=?";
        List<Order> orders = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Order.class), uname,isshop);
        return orders;
@@ -49,7 +49,6 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
         boolean flag=true;
         String sql="update orders set o_state=1 where u_name=?";
         int i = jdbcTemplate.update(sql, uname);
-
         if (i==0)
             flag=false;
         return flag;

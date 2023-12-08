@@ -21,7 +21,7 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
     }
 
     @Override
-    public List getDishList(int start, int length){
+    public List<Dish> getDishList(int start, int length){
         String sql="select *from dish limit ?,?";
         List<Dish> dishes=null;
          dishes = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Dish.class), start, length);

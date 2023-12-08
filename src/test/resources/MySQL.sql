@@ -4,6 +4,7 @@
 /* Created on:     2023/12/8 10:40:08                           */
 /*==============================================================*/
 
+create database ordersystem;
 
 drop table if exists Users;
 
@@ -76,7 +77,7 @@ INSERT INTO `dish`  VALUES
 
 
 INSERT INTO `users`  VALUES
-                         ( '张三', '1234'),
+                         ( 'root', '1234'),
                          ( 'test', '1234');
 insert into orders VALUES
                        (1,'test',5,0),

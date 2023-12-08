@@ -13,14 +13,14 @@ public class OrderDaoTest {
         System.out.println(orderDao.addOrder("test", 1, 5));
     }
     @Test
-    public void getOrderByuname(){
+    public void getOrderByUname(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
         System.out.println(orderDao.getOrderByUname("test", 0));
         System.out.println(orderDao.getOrderByUname("test", 1));
     }
     @Test
-    public  void getOrderByuname2(){
+    public  void getOrderByUname2(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
         System.out.println(orderDao.getOrderByUname("test"));
