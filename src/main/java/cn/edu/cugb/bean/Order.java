@@ -2,7 +2,7 @@ package cn.edu.cugb.bean;
 
 public class Order {
     private  Integer dId;
-    private  Integer uId;
+    private  String  uName;
     private  Integer oCount;
     private  Integer  oState;
 
@@ -10,9 +10,10 @@ public class Order {
     public Order() {
     }
 
-    public Order(Integer dId, Integer uId, Integer oCount, Integer oState) {
+
+    public Order(Integer dId, String uName, Integer oCount, Integer oState) {
         this.dId = dId;
-        this.uId = uId;
+        this.uName = uName;
         this.oCount = oCount;
         this.oState = oState;
     }
@@ -35,18 +36,18 @@ public class Order {
 
     /**
      * 获取
-     * @return uId
+     * @return uName
      */
-    public Integer getUId() {
-        return uId;
+    public String getUName() {
+        return uName;
     }
 
     /**
      * 设置
-     * @param uId
+     * @param uName
      */
-    public void setUId(Integer uId) {
-        this.uId = uId;
+    public void setUName(String uName) {
+        this.uName = uName;
     }
 
     /**
@@ -82,6 +83,6 @@ public class Order {
     }
 
     public String toString() {
-        return "order{dId = " + dId + ", uId = " + uId + ", oCount = " + oCount + ", oState = " + oState + "}";
+        return "Order{dId = " + dId + ", uName = " + uName + ", oCount = " + oCount + ", oState = " + oState + "}";
     }
 }

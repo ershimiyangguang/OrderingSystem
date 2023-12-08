@@ -1,7 +1,6 @@
 package cn.edu.cugb.bean;
 
 public class User {
-    private  Integer uId;
     private  String uName;
     private  String uPassword;
 
@@ -9,26 +8,10 @@ public class User {
     public User() {
     }
 
-    public User(Integer uId, String uName, String uPassword) {
-        this.uId = uId;
+
+    public User(String uName, String uPassword) {
         this.uName = uName;
         this.uPassword = uPassword;
-    }
-
-    /**
-     * 获取
-     * @return uId
-     */
-    public Integer getUId() {
-        return uId;
-    }
-
-    /**
-     * 设置
-     * @param uId
-     */
-    public void setUId(Integer uId) {
-        this.uId = uId;
     }
 
     /**
@@ -64,6 +47,6 @@ public class User {
     }
 
     public String toString() {
-        return "User{uId = " + uId + ", uName = " + uName + ", uPassword = " + uPassword + "}";
+        return "User{uName = " + uName + ", uPassword = " + uPassword + "}";
     }
 }
