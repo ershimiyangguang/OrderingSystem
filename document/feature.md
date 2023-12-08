@@ -112,6 +112,13 @@
       返回类似这样的数组
     - 不存在:[]
 ## 6. 展示某道菜
+### dao层
+-[ ] DishDao
+  - Dish getDishById(int dId);
+    - did: 菜的id
+    - 返回菜
+    - 存在:Dish
+    - 不存在:null
 ### service层
 -[ ] DisplayOneDishService
   - Dish displayOne(int index);
