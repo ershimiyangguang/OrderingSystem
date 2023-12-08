@@ -112,6 +112,13 @@
       返回类似这样的数组
     - 不存在:[]
 ## 6. 展示某道菜
+### dao层
+-[ ] DishDao
+  - Dish getDishById(int dId);
+    - did: 菜的id
+    - 返回菜
+    - 存在:Dish
+    - 不存在:null
 ### service层
 -[ ] DisplayOneDishService
   - Dish displayOne(int index);
@@ -152,7 +159,6 @@
 ## 7. 展示购物车
 ### dao层
 -[ ] OrderDao
-
   - List<Order> getOrderByUid(String uname, int isShop);
     - uname: 用户名
     - isShop: 1表示返回已付款的订单，0表示返回未付款的订单（购物车）
@@ -209,7 +215,7 @@
     - 不成功(没有记录可更改，即购物车为空):false
 ### service层
 -[ ] BuyService
-  - Map\<Dish,Integer> buyOrder(String uname);
+  - boolean buyOrder(String uname);
     - uname: 用户名
     - 将uname为此用户的所有order都改成已支付
     - 成功:true
