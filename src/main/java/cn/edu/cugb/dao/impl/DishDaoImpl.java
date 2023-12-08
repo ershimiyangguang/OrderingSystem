@@ -28,4 +28,10 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
         return dishes;
     }
 
+    @Override
+    public Dish getDishById(int dId) {
+        return null;
+    }
+
+
 }
