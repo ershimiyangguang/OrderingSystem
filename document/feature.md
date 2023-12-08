@@ -43,8 +43,7 @@
     - 没成功:false
 ### service层
 -[ ] RegisterService
-  - Message\<User\> login(String uid, String uname, String upassword1, String upassword2 String key, String value);
-    - uid: 用户账号
+  - Message\<User\> login(String uname, String upassword1, String upassword2 String key, String value);
     - uname: 用户名
     - upassword1: 用户第一次输入的密码
     - upassword2: 用户第二次输入的密码
@@ -53,13 +52,12 @@
     - 判断验证码是否正确（验证码键值对存放在resources/properties/verification-code.properties文件中）
     - 判断是否有属性为空字符串或null
     - 判断输入的内容是否可行（账号密码只能由数字、英文构成，用户名无所谓，字符串长度都在1—25）
-    - 判断账号是否已存在
+    - 账号为10位纯数字，不能有重复
     - 判断两次输入的密码是否相同
     - 无误:0, null, null
     - 有误:code, reason, null
 ### servlet层
 -[ ] RegisterServlet
-  - uid: 账号
   - uname: 用户名
   - upassword1: 第一次的密码
   - upassword2: 第二次的密码
@@ -138,7 +136,7 @@
     - 添加失败: false
 ### service层
 -[ ] addOrderService
-  - boolean addOrder(int uid, int did, int count);
+  - boolean addOrder(String uid, String did, int count);
     - uid: 用户id
     - did: 菜id
     - count: 数量
@@ -153,15 +151,15 @@
 ## 7. 展示购物车
 ### dao层
 -[ ] OrderDao
-  - List<Order> getOrderByUid(int uid, boolean isShop);
+  - List<Order> getOrderByUid(int uid, int isShop);
     - uid: 用户账号
-    - isShop: true表示返回已付款的订单，false表示返回未付款的订单（购物车）
+    - isShop: 1表示返回已付款的订单，0表示返回未付款的订单（购物车）
     - 返回所有uid为此用户的Order
     - 存在:List\<Order>
     - 不存在:null
 ### service层
 -[ ] GetShoppingCartService
-  - Map\<Dish,Integer> getShoppingCart(int uid);
+  - Map\<Dish,Integer> getShoppingCart(String uid);
     - uid: 用户账号
     - Map中储存Dish以及对应的数量
     - 存在: Map\<Dish,Integer>
@@ -185,7 +183,7 @@
     - 不存在:null
 ### service层
 -[ ] GetOrderService
-  - Map\<Dish,Integer> GetOrder(int uid);
+  - Map\<Dish,Integer> GetOrder(String uid);
     - uid: 用户账号
     - Map中储存Dish以及对应的数量
     - 存在: Map\<Dish,Integer>
@@ -209,7 +207,7 @@
     - 不成功:false
 ### service层
 -[ ] BuyService
-  - Map\<Dish,Integer> BuyOrder(int uid);
+  - Map\<Dish,Integer> buyOrder(String uid);
     - uid: 用户账号
     - 将uid为此用户的所有order都改成已支付
     - 成功:true

@@ -31,7 +31,6 @@ public class UserDaoTest {
         User user=new User(3,"王五","123456");
         boolean bool = userDaoImpl.addUser(user);
         System.out.println(bool);
-
     }
 
 }
