@@ -18,13 +18,13 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
     @Override
     public boolean addOrder(String uname, int did, int count){
         boolean flag=true;
-        String sql="insert into orders (u_name,d_id,o_count) values(?,?,?)";
+        String sql="insert into orders (u_name,d_id,o_count,o_state) values(?,?,?,?)";
 
        try{
-           jdbcTemplate.update(sql, uname, did, count);
+           jdbcTemplate.update(sql, uname, did, count,0);
        }
        catch (Exception e){
-           System.out.print(e);
+           //System.out.print(e);
            flag = false;
        }
 
