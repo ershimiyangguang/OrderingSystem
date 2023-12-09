@@ -1,11 +1,12 @@
 package cn.edu.cugb.servlet;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +18,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class LoginServletTest {
+public class RegisterServletTest {
 
     @Mock
     private HttpServletRequest request;
@@ -32,7 +33,7 @@ public class LoginServletTest {
     private PrintWriter writer;
 
     @InjectMocks
-    private LoginServlet loginServlet;
+    private RegisterServlet registerServlet;
     @Before
     public void SetUp() throws Exception {
         MockitoAnnotations.initMocks(this);
@@ -45,7 +46,8 @@ public class LoginServletTest {
     @Test
     public void Servlet1Test() throws Exception {
         // 设置HttpServletRequest对象的参数值
-        when(request.getParameter("uname")).thenReturn("test");
+        when(request.getParameter("uid")).thenReturn("test");
+        when(request.getParameter("password")).thenReturn("1234");
         when(request.getParameter("password")).thenReturn("1234");
         when(request.getParameter("key")).thenReturn("0");
         when(request.getParameter("value")).thenReturn("0313");
@@ -56,13 +58,10 @@ public class LoginServletTest {
         when(request.getSession()).thenReturn(session);
 
         // 调用被测试的方法
-        loginServlet.doGet(request, response);
-
-        // 验证ServletRequest对象的setAttribute方法是否被调用
-        verify(request.getSession()).setAttribute(eq("User"), any());
+        registerServlet.doGet(request, response);
 
         // 验证ServletResponse对象的getWriter方法是否被调用
-        verify(writer).println("{\"code\":\"0\"}");
+        verify(response.getWriter()).println("{\"code\":\"0\"}");
     }
 
 //    public void Servlet2Test() throws Exception {
@@ -78,4 +77,5 @@ public class LoginServletTest {
 //        // 验证ServletResponse对象的getWriter方法是否被调用
 //        verify(response.getWriter()).println("{\"code\":\"0\"}");
 //    }
+
 }
