@@ -14,6 +14,6 @@ public class RegisterServiceImplTest {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
        RegisterServiceImpl registerService = applicationContext.getBean("RegisterService", RegisterServiceImpl .class);
 
-        System.out.print( registerService.register ("test3","1234","1234","0","0313"));
+        System.out.print( registerService.register ("test4","1234","1234","0","0313"));
     }
 }
