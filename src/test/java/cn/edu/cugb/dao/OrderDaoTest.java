@@ -10,7 +10,7 @@ public class OrderDaoTest {
     public  void addOrderTest(){
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
-        System.out.println(orderDao.addOrder("test", 1, 5));
+        System.out.println(orderDao.addOrder("test", 4, 5));
     }
     @Test
     public void getOrderByUname(){

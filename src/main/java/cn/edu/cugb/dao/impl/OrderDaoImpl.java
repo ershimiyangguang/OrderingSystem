@@ -24,6 +24,7 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
            jdbcTemplate.update(sql, uname, did, count);
        }
        catch (Exception e){
+           System.out.print(e);
            flag = false;
        }
 
