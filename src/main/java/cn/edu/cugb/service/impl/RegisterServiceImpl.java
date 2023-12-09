@@ -25,7 +25,15 @@ public class RegisterServiceImpl implements RegisterService {
 
         Message<User> message=new Message<User>();
 
-        InputStream inputStream = this.getClass().getResourceAsStream("verification-code.properties");
+        InputStream inputStream=null;
+        try {
+            inputStream = this.getClass().getResourceAsStream("/properties/verification-code.properties");
+
+        }catch (Exception e)
+        {
+            System.out.print(e);
+        }
+
         Properties properties = new Properties();
         properties.load(inputStream);
 
@@ -37,21 +45,21 @@ public class RegisterServiceImpl implements RegisterService {
            return message;
         }
 
-        if(isValid(uname))
+        if(!isValid(uname))
         {
             message.setCode(1);
             message.setReason("账号只能由数字、英文构成");
             return message;
         }
 
-        if(isValid(password1))
+        if(!isValid(password1))
         {
             message.setCode(2);
             message.setReason("密码只能由数字、英文构成");
             return message;
         }
 
-        if(password1!=password2)
+        if(!password1.equals(password2))
         {
 
             message.setCode(3);
@@ -65,6 +73,15 @@ public class RegisterServiceImpl implements RegisterService {
             message.setReason("用户已存在");
             return message;
         }
+
+        if(!TrueValue.equals(value))
+        {
+            message.setCode(5);
+            message.setReason("验证码不正确");
+            return message;
+        }
+
+
 
 
         User user=new User();

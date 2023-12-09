@@ -21,6 +21,7 @@
         <property name="dataSource" ref="ProjectDataSource"></property>
     </bean>
 
+    <context:component-scan base-package="cn.edu.cugb"/>
 
 
 <!--dao层-->
@@ -43,6 +44,6 @@
     <bean id="DisplayDishListService" class="cn.edu.cugb.service.impl.DisplayDishListServiceImpl"/>
     <bean id="DisplayOneDishService" class="cn.edu.cugb.service.impl.DisplayOneDishServiceImpl"/>
     <bean id="GetOrderService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
-    <bean id="GetShoppingCartService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
+    <bean id="GetShoppingCartService" class="cn.edu.cugb.service.impl.GetShoppingCartServiceImpl"/>
 
 </beans>

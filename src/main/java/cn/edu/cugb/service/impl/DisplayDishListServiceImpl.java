@@ -9,7 +9,7 @@ import java.util.List;
 
 public class DisplayDishListServiceImpl implements  DisplayDishListService {
 
-    int DishNumberInOnePage;
+    int DishNumberInOnePage=5;
     @Autowired
     @Qualifier("dishDao")
     DishDao dishDao;
