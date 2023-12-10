@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #eeeeee;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    border-radius: 20px;
+}
+.logo a{
+    background-image: url("../picture/logo.jpg");
+    background-position: 20px 0px;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 350px;
+    display: block;
+}
+.nav {
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+}
+.nav a{
+    margin: 20px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: block;
+}
+.nav a:hover {
+    border-bottom: orange 5px solid;
+}
+.shopping {
+    margin: 20px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: block;
+}

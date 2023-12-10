@@ -1,9 +1,8 @@
-function toRegister() {
-    window.open("register.html");
-}
+let key=0;
 function login() {
-    let uid = document.getElementById("uid").value;
-    let password = document.getElementById("password")
+    let uname = document.getElementById("uname").value;
+    let password = document.getElementById("password").value;
+    let value = document.getElementById("value").value;
     let xhr = new XMLHttpRequest();
     xhr.open("post", "LoginServlet", true);
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
@@ -11,8 +10,8 @@ function login() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 let res = JSON.parse(xhr.responseText);
-                if (res.code===0) {
-                    
+                if (res.code==0) {
+                    window.open("main.html", "_self");
                 }else{
                     let s = document.getElementById("message");
                     s.innerHTML=res.reason;
@@ -20,5 +19,5 @@ function login() {
             }
         }
     }
-    xhr.send("uid="+uid+"&upassword="+password);
+    xhr.send("uname="+uname+"&password="+password+"&key="+key+"&value="+value);
 }

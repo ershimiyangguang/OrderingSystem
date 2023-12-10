@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
             out.println("{\"code\":\"0\"}");
         }
         else{
-            out.println("{\"code\":\""+loginUser.getReason()+"\"}");
+            out.println("{\"code\":\""+loginUser.getCode()+"\",\"reason\":\""+loginUser.getReason()+"\"}");
         }
 
     }
