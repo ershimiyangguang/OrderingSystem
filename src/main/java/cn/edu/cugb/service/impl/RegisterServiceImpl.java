@@ -39,6 +39,16 @@ public class RegisterServiceImpl implements RegisterService {
 
         String TrueValue=properties.getProperty(key); // 验证码的值
 
+        // 先对验证码进行验证
+
+        if(!TrueValue.equals(value))
+        {
+            message.setCode(5);
+            message.setReason("验证码不正确");
+            return message;
+        }
+
+
         if (isEmpty(uname) || isEmpty(password1) || isEmpty(password2) || isEmpty(value)) {
             // 如果有任何参数为空，返回错误消息
            message.setReason("所有信息必须填写");
@@ -73,14 +83,6 @@ public class RegisterServiceImpl implements RegisterService {
             message.setReason("用户已存在");
             return message;
         }
-
-        if(!TrueValue.equals(value))
-        {
-            message.setCode(5);
-            message.setReason("验证码不正确");
-            return message;
-        }
-
 
 
 
