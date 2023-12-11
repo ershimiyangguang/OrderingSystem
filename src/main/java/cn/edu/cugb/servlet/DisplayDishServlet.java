@@ -35,7 +35,7 @@ public class DisplayDishServlet extends HttpServlet {
                Dish dish = dishList.get(i);
                if(i==0)
                    out.print("[");
-               out.print("{\"dId\":\""+dish.getDId()+"\",\"dName\":\""+dish.getDName()+"\",\"dDescription\":\""+dish.getDDescription()+"\",\"dImage\":\""+dish.getDImage()+"\"}");
+               out.print("{\"dId\":\""+dish.getDId()+"\",\"dName\":\""+dish.getDName()+"\",\"dPrice\":\""+dish.getDPrice()+"\",\"dDescription\":\""+dish.getDDescription()+"\",\"dImage\":\""+dish.getDImage()+"\"}");
                if(i==dishList.size()-1)
                    out.print("]");
                else

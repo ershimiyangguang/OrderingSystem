@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/dishlist.css">
     <script src="static/js/islogin.js"></script>
+    <script src="static/js/dishlist.js"></script>
 </head>
 <body>
+<div class="updown">
+    <div class="up" onclick="toTop()">∧</div>
+    <div class="down" onclick="toBottom()">∨</div>
+</div>
 <div class="wrapper">
     <div class="header">
         <div class="logo">
@@ -27,18 +32,14 @@
         <div class="title">
             菜单<hr>
         </div>
-        <ul class="list">
-            <li>
-                <a class="dish" href="dish.html?did=1">
-                    <img src="images/500008.jpg" alt="">
-                    <div class="info">
-                        <h1>皮蛋瘦肉粥</h1>
-                        <p class="illustration">美味可口!</p>
-                        <span class="priceInfo">单价:<b class="price">5元</b></span>
-                    </div>
-                </a>
-            </li>
+        <ul class="list" id="list">
+            菜单加载中...
         </ul>
+        <div class="pageCtrl">
+            <div class="lastPage" onclick="lastPage();">上一页</div>
+            <div id="pageNumber">第1页, 共0页</div>
+            <div class="nextPage" onclick="nextPage();">下一页</div>
+        </div>
     </div>
 </div>
 </body>

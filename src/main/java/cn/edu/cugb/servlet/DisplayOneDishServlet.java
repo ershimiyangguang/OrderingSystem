@@ -31,8 +31,8 @@ public class DisplayOneDishServlet extends HttpServlet {
         }
         else{
             Dish dish = displayOneDishService.displayOne(index);
-            out.println("{\"dId\":\""+dish.getDId()+"\",\"dName\":\""+dish.getDName()+"\",\"dDescription\":\""+dish.getDDescription()+"\",\"dImage\":\""+dish.getDImage()+"\"}");
 
+            out.println("{\"dId\":\""+dish.getDId()+"\",\"dName\":\""+dish.getDName()+"\",\"dPrice\":\""+dish.getDPrice()+"\",\"dDescription\":\""+dish.getDDescription()+"\",\"dImage\":\""+dish.getDImage()+"\"}");
         }
 
     }

@@ -1,0 +1,72 @@
+.dish {
+    width: 1200px;
+    height: 600px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+}
+.dish img {
+    margin-left: 50px;
+    margin-top: 100px;
+    height: 400px;
+}
+.dish .info {
+    margin-left: 50px;
+    margin-top: 100px;
+}
+.dish .info h1 {
+    margin: 20px;
+}
+.dish .info p {
+    text-indent: 2em;
+    margin: 20px;
+    width: 400px;
+    height: 150px;
+}
+.dish .info span {
+    display: block;
+    margin: 20px;
+    width: 400px;
+    color: orange;
+    text-align: right;
+    font-size: 30px;
+}
+.dish .info .shop {
+    margin: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    line-height: 50px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+.count {
+    display: flex;
+    margin-left: 25px;
+}
+.count .changeNum1{
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 12px 0 0 12px;
+    text-align: center;
+}
+.count .changeNum2{
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 0 12px 12px 0;
+    background-color: orange;
+    text-align: center;
+}
+.count input{
+    width: 50px;
+    outline: none;
+    border:black 1px solid;
+}
