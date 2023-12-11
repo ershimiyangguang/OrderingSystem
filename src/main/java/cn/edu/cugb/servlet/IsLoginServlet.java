@@ -18,6 +18,7 @@ public class IsLoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         User user = (User) request.getSession().getAttribute("User");
+
         if(user!=null){
             out.println("{\"code\":\"0\",\"uname\":\""+user.getUName()+"\"}");
         }
@@ -28,6 +29,6 @@ public class IsLoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req, resp);
+        this.doGet(req,resp);
     }
 }

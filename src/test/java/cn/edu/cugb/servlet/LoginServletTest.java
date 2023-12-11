@@ -65,17 +65,4 @@ public class LoginServletTest {
         verify(writer).println("{\"code\":\"0\"}");
     }
 
-//    public void Servlet2Test() throws Exception {
-//        // 设置HttpServletRequest对象的参数值
-//        when(request.getParameter("uid")).thenReturn("test2");
-//        when(request.getParameter("password")).thenReturn("1234");
-//        when(request.getParameter("key")).thenReturn("0");
-//        when(request.getParameter("value")).thenReturn("0313");
-//
-//        // 调用被测试的方法
-//        loginServlet.doGet(request, response);
-//
-//        // 验证ServletResponse对象的getWriter方法是否被调用
-//        verify(response.getWriter()).println("{\"code\":\"0\"}");
-//    }
 }
