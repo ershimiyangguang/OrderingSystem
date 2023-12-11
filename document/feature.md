@@ -97,8 +97,8 @@
 ### service层
 -[ ] DisplayDishListService
   - List<Dish> displayDishList(int page);
-    - page: 第几页的菜单（page从0开始）
-    - 一页有5道菜，菜从0开始
+    - page: 第几页的菜单（page从1开始）
+    - 一页有5道菜，菜从1开始
     - 存在:List<Dish>
     - 不存在:null
 ### servlet层
@@ -145,7 +145,6 @@
 -[ ] addOrderService
   - boolean addOrder(String uid, int did, int count);
     - uname:用户名
-
     - did: 菜id
     - count: 数量
     - 添加成功: true
@@ -222,7 +221,27 @@
     - 不成功:false
 ### servlet层
 -[ ] BuyServlet
-  - uname: 用户名
-  - 将uname为此用户的所有order都改成已支付
+  - 将此用户的所有order都改成已支付
   - 成功:{code:0}
   - 不成功:{code:1}
+## 10. 清空购物车
+### dao层
+-[ ] OrderDao
+  - boolean deleteOrderByUid(String uname);
+    - uname: 用户名
+    - 删除所有属于该用户且未支付的订单
+    - 成功:true
+    - 不成功(没有记录可更改，即购物车为空):false
+### service层
+-[ ] ClearShoppingCartService
+  - boolean buyOrder(String uname);
+    - uname: 用户名
+    - 删除所有属于该用户且未支付的订单
+    - 成功:true
+    - 不成功:false
+### servlet层
+-[ ] ClearShoppingCartServlet
+  - 删除所有属于该用户且未支付的订单
+  - 成功:{code:0}
+  - 不成功:{code:1}
+

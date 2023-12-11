@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册</title>
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/login.css">
+    <script src="static/js/islogin.js"></script>
+    <script src="static/js/register.js"></script>
 </head>
 <body>
-    <form>
-        <input type="text" id="uid" plweceholder="账号"><br>
-        <input type="text" id="uid" placeholder="用户名"><br>
-        <input type="password" id="uid" placeholder="密码"><br>
-        <input type="password" id="uid" placeholder="确认密码"><br>
-        <input type="text" id="uid" placeholder="验证码">
-        <img src="static/code_img/code0.png" alt=""><br>
-        <input type="button" value="注册">
-    </form>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="main.html"></a>
+            </div>
+            <ul class="nav">
+                <li><a href="main.html">首页</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+            <div class="shopping" id="shopping">
+                <a href="login.html">登录后可查看订单</a>
+            </div>
+        </div>
+        <div class="login">
+            <div class="context">
+                <div class="img"></div>
+                <div class="form">
+                    <input class="input" type="text" id="uname" placeholder="用户名"/><br>
+                    <input class="input" type="password" id="password1" placeholder="密码"><br>
+                    <input class="input" type="password" id="password2" placeholder="确认密码"><br>
+                    <input class="input2" type="text" id="value" placeholder="验证码">
+                    <img id="verify" class="verify" align="absmiddle" onclick="change()"><br>
+                    <span class="message" id="message"></span><br>
+                    <button class="button1" onclick="register()">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

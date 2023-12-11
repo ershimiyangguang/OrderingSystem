@@ -1,0 +1,46 @@
+.dishlist {
+    border-radius: 20px;
+    width: 1200px;
+    background-color: white;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.dishlist .list {
+    padding-bottom: 40px;
+}
+.dishlist .title {
+    margin-left: 100px;
+    display: block;
+    width: 1000px;
+    font-size: 40px;
+    line-height: 80px;
+}
+.dishlist .dish {
+    margin-top: 40px;
+    width: 1000px;
+    margin-left: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.dishlist .info {
+    margin-left: 100px;
+    padding-top: 20px;
+    width: 500px;
+}
+.info .priceInfo {
+    text-align: right;
+    display: block;
+    width: 500px;
+    font-weight: 300;
+}
+.info .illustration {
+    font-weight: 300;
+    text-indent: 2em;
+    height: 100px;
+}
+.info .price {
+    color: orange;
+    font-size: 30px;
+}
