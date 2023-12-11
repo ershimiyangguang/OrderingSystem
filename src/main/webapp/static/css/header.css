@@ -45,5 +45,24 @@ body {
     margin: 20px;
     padding: 0 20px;
     line-height: 60px;
+    height: 100px;
+    width: 400px;
+    display: flex;
+}
+.header .icon-shopping-cart {
+    margin-top: 16px;
     display: block;
+    background-image: url("../picture/shoppingcart.jpg");
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.header .order {
+    display: block;
+    width: 200px;
+    height: 30px;
+    padding-left: 50px;
+    line-height: 30px;
 }

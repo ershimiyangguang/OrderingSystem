@@ -48,6 +48,7 @@ public class LoginServiceImpl implements LoginService {
              if(value.equals(TrueValue))
              {
                  message.setCode(0);
+                 message.setObject(user);
              }
              else {
                  System.out.print(value+" "+TrueValue);

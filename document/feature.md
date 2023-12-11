@@ -97,8 +97,8 @@
 ### service层
 -[ ] DisplayDishListService
   - List<Dish> displayDishList(int page);
-    - page: 第几页的菜单（page从0开始）
-    - 一页有5道菜，菜从0开始
+    - page: 第几页的菜单（page从1开始）
+    - 一页有5道菜，菜从1开始
     - 存在:List<Dish>
     - 不存在:null
 ### servlet层
