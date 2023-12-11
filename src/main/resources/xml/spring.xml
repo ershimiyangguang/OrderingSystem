@@ -38,7 +38,7 @@
 
     <bean id="LoginService" class="cn.edu.cugb.service.impl.LoginServiceImpl"/>
     <bean id="RegisterService" class="cn.edu.cugb.service.impl.RegisterServiceImpl"/>
-    <bean id="addOrderService" class="cn.edu.cugb.service.impl.AddOrderServiceImpl"/>
+    <bean id="AddOrderService" class="cn.edu.cugb.service.impl.AddOrderServiceImpl"/>
     <bean id="BuyService" class="cn.edu.cugb.service.impl.BuyServiceImpl"/>
     <bean id="DishNumberService" class="cn.edu.cugb.service.impl.DishNumberServiceImpl"/>
     <bean id="DisplayDishListService" class="cn.edu.cugb.service.impl.DisplayDishListServiceImpl"/>
