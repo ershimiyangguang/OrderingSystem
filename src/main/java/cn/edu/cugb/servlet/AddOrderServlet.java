@@ -1,5 +1,7 @@
 package cn.edu.cugb.servlet;
 
+
+import cn.edu.cugb.bean.User;
 import cn.edu.cugb.service.AddOrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,7 +24,8 @@ public class AddOrderServlet extends HttpServlet {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
         AddOrderService addOrderService = applicationContext.getBean("AddOrderService", AddOrderService.class);
 
-        String uname = request.getParameter("uname");
+        User user = (User) request.getSession().getAttribute("User");
+        String uname = user.getUName();
         int did = Integer.parseInt(request.getParameter("did"));
         int count = Integer.parseInt(request.getParameter("count"));
 
