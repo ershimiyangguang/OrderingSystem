@@ -227,7 +227,7 @@
 ## 10. 清空购物车
 ### dao层
 -[ ] OrderDao
-  - boolean deleteOrderByUid(String uname);
+  - boolean deleteOrderByUname(String uname);
     - uname: 用户名
     - 删除所有属于该用户且未支付的订单
     - 成功:true

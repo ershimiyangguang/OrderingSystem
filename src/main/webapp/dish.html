@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详情</title>
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/dish.css">
+    <script src="static/js/islogin.js"></script>
+    <script src="static/js/dish.js"></script>
 </head>
 <body>
-    <img src="static/dish_img/500008.jpg" alt="">
-    <h3>菜名</h3>
-    <p>描述</p>
-    <p>价格</p>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="main.html"></a>
+            </div>
+            <ul class="nav">
+                <li><a href="main.html">首页</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+            <div class="shopping" id="shopping">
+                <a href="login.html">登录后可查看订单</a>
+            </div>
+        </div>
+        <div class="dish">
+            <div>
+                <img id="dimg" src="images/500008.jpg">
+            </div>
+            <div class="info">
+                <h1 id="dName">菜名</h1>
+                <p id="dD">描述</p>
+                <span id="dPrice">价格</span>
+                <div class="count">
+                    <div class="changeNum1" onclick="add(-1)">-</div>
+                    <input id="number" type="text" onblur="add(0)" value="0">
+                    <div class="changeNum2" onclick="add(1)">+</div>
+                </div>
+                <div class="shop">加入购物车</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
