@@ -1,0 +1,88 @@
+.login {
+    height: 600px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding-top: 100px;
+}
+.login .context {
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    height: 400px;
+    width: 1000px;
+    margin-left: 100px;
+    display:flex;
+    background-color: rgba(0,0,0,0.05);
+}
+.login .img {
+    width: 500px;
+    height: 400px;
+    margin-left: 20px;
+    background-image: url("../picture/500024.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+.login .form {
+    width: 500px;
+    margin-top: 20px;
+    padding-left: 100px;
+}
+.form .input {
+    height: 40px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: orange 1px solid;
+    outline: none;
+    margin-top: 20px;
+}
+.form .input2 {
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: orange 1px solid;
+    outline: none;
+    margin:20px 0;
+}
+.form .verify {
+    margin-left: 50px;
+}
+.form .message {
+    margin-left: 10px;
+    background-color: rgba(255,0,0,0.1);
+    color: red;
+    font-size: 15px;
+}
+.form .button1 {
+    display: block;
+    margin-top: 30px;
+    background-color: orange;
+    height: 40px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    border: 0;
+}
+.form .button2 {
+    display: block;
+    margin-top: 20px;
+    background-color: white;
+    height: 40px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
+    text-align: center;
+    color: orange;
+    border: 0;
+}

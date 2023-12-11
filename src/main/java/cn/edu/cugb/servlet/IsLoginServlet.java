@@ -18,11 +18,8 @@ public class IsLoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         User user = (User) request.getSession().getAttribute("User");
-        String uname = request.getParameter("uname");
-        String upassword = request.getParameter("password");
-
-        if(uname.equals(user.getUName())&&upassword.equals(user.getUPassword())){
-            out.println("{\"code\":\"0\",\"uname\":\""+uname+"\"}");
+        if(user!=null){
+            out.println("{\"code\":\"0\",\"uname\":\""+user.getUName()+"\"}");
         }
         else{
             out.println("{\"code\":\"1\"}");

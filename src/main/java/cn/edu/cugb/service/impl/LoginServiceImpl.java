@@ -52,6 +52,7 @@ public class LoginServiceImpl implements LoginService {
                 if(user.getUPassword().equals(password))
                 {
                         message.setCode(0);
+                        message.setObject(user);
                 }
                 else
                 {
@@ -65,6 +66,7 @@ public class LoginServiceImpl implements LoginService {
             System.out.print(value+" "+TrueValue);
             message.setCode(4);
             message.setReason("验证码不正确");
+
 
         }
 
