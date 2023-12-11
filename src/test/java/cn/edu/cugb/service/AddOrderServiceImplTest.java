@@ -27,7 +27,7 @@ public class AddOrderServiceImplTest {
      AddOrderServiceImpl addOrderService = applicationContext.getBean("addOrderService", AddOrderServiceImpl .class);
         // 调用被测试的方法
 
-        boolean result = addOrderService.addOrder("test3", 4, 5);
+        boolean result = addOrderService.addOrder("test3", 7, 5);
 
         System.out.println(result);
         // 验证结果

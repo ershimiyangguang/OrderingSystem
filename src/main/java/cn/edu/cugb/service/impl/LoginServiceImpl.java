@@ -22,6 +22,7 @@ public class LoginServiceImpl implements LoginService {
         Message<User>message =new Message<User>();
 
         User user=userDao.getUserByName(uid);
+
         InputStream inputStream=null;
         try {
             inputStream = this.getClass().getResourceAsStream("/properties/verification-code.properties");
@@ -36,34 +37,42 @@ public class LoginServiceImpl implements LoginService {
 
         String TrueValue=properties.getProperty(key); // 验证码的值
 
-        if(user==null)
-        {
-            message.setReason("用户不存在");
-            message.setCode(1);
-        }
-        else
-        {
-         if(user.getUPassword().equals(password))
-         {
-             if(value.equals(TrueValue))
-             {
-                 message.setCode(0);
-                 message.setObject(user);
-             }
-             else {
-                 System.out.print(value+" "+TrueValue);
-                 message.setCode(4);
-                 message.setReason("验证码不正确");
 
-             }
-         }
-         else
-         {
-             System.out.print("输入密码"+password+" "+"正确密码"+user.getUPassword());
-             message.setReason("密码不正确");
-             message.setCode(2);
-         }
+        // 先对验证码进行验证
+
+        if(value.equals(TrueValue))
+        {
+            if(user==null)
+            {
+                message.setReason("用户不存在");
+                message.setCode(1);
+            }
+            else
+            {
+                if(user.getUPassword().equals(password))
+                {
+                        message.setCode(0);
+                        message.setObject(user);
+                }
+                else
+                {
+                    System.out.print("输入密码"+password+" "+"正确密码"+user.getUPassword());
+                    message.setReason("密码不正确");
+                    message.setCode(2);
+                }
+            }
         }
+        else {
+            System.out.print(value+" "+TrueValue);
+            message.setCode(4);
+            message.setReason("验证码不正确");
+
+
+        }
+
+
+
+
 
         return  message;
 
