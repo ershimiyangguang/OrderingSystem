@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>主页</title>
     <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/dishlist.css">
     <script src="static/js/islogin.js"></script>
 </head>
 <body>
@@ -22,26 +23,23 @@
             <a href="login.html">登录后可查看订单</a>
         </div>
     </div>
-    <ul>
-        <li>
-            <img src="images/500008.jpg" alt="">
-            <h3>菜名</h3>
-            <p>描述</p>
-            <p>价格</p>
-        </li>
-        <li>
-            <img src="images/500008.jpg" alt="">
-            <h3>菜名</h3>
-            <p>描述</p>
-            <p>价格</p>
-        </li>
-        <li>
-            <img src="images/500008.jpg" alt="">
-            <h3>菜名</h3>
-            <p>描述</p>
-            <p>价格</p>
-        </li>
-    </ul>
+    <div class="dishlist">
+        <div class="title">
+            菜单<hr>
+        </div>
+        <ul class="list">
+            <li>
+                <a class="dish" href="dish.html?did=1">
+                    <img src="images/500008.jpg" alt="">
+                    <div class="info">
+                        <h1>皮蛋瘦肉粥</h1>
+                        <p class="illustration">美味可口!</p>
+                        <span class="priceInfo">单价:<b class="price">5元</b></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
