@@ -13,4 +13,6 @@ public interface OrderDao {
     List<Order> getOrderByUname(String uname, int isshop);
 
     boolean UpdateOrderStateByUname(String uname);
+
+    boolean deleteOrderByUname(String uname);
 }

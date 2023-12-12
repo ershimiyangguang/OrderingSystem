@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.*;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 
-
 import java.util.UUID;
 
 public class AlipayTool {
