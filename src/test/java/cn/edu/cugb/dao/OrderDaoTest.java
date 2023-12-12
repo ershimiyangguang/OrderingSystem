@@ -33,4 +33,12 @@ public class OrderDaoTest {
         System.out.println(orderDao.UpdateOrderStateByUname("test"));
         System.out.println(orderDao.UpdateOrderStateByUname("lisi"));
     }
+    @Test
+    public void deleteOrderByUname(){
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
+        OrderDaoImpl orderDao = applicationContext.getBean("orderDao", OrderDaoImpl.class);
+        System.out.println(orderDao.deleteOrderByUname("test"));
+        System.out.println(orderDao.deleteOrderByUname("lisi"));
+    }
+
 }

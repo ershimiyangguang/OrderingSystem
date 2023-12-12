@@ -54,4 +54,16 @@ public class OrderDaoImpl implements cn.edu.cugb.dao.OrderDao {
             flag=false;
         return flag;
     }
+   public boolean deleteOrderByUname(String uname){
+        boolean flag=true;
+        String sql="delete from orders where u_name=? and o_state=0";
+        try{
+            int i = jdbcTemplate.update(sql, uname);
+            //System.out.println(i);
+        }
+        catch(Exception e){
+            flag=false;
+        }
+       return flag;
+   }
 }
