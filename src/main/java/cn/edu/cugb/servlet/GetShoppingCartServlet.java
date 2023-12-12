@@ -31,7 +31,7 @@ public class GetShoppingCartServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("User");
         String uname = user.getUName();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         GetShoppingCartService getShoppingCartService = applicationContext.getBean("GetShoppingCartService", GetShoppingCartService.class);
 
         if(user==null||getShoppingCartService.getShoppingCart(uname)==null){

@@ -2,6 +2,7 @@ package cn.edu.cugb.servlet;
 
 import cn.edu.cugb.bean.Dish;
 import cn.edu.cugb.service.DisplayDishListService;
+import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,11 +23,10 @@ public class DisplayDishServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         DisplayDishListService displayDishListService = applicationContext.getBean("DisplayDishListService", DisplayDishListService.class);
 
         int page = Integer.parseInt(requset.getParameter("page"));
-
         if(displayDishListService.displayDishList(page)==null){
             out.println("[]");
         }

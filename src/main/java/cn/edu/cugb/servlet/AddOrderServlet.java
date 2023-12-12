@@ -21,7 +21,7 @@ public class AddOrderServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         AddOrderService addOrderService = applicationContext.getBean("AddOrderService", AddOrderService.class);
 
         User user = (User) request.getSession().getAttribute("User");

@@ -23,7 +23,7 @@ public class BuyServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("User");
         String uname = user.getUName();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         BuyService buyService = applicationContext.getBean("BuyService", BuyService.class);
 
         if(buyService.buyOrder(uname)){

@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
         String key = request.getParameter("key");
         String value = request.getParameter("value");
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         LoginService loginService = applicationContext.getBean("LoginService", LoginService.class);
 
         Message<User> loginUser = loginService.login(uname, upassword, key, value);
