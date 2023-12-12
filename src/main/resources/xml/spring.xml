@@ -45,5 +45,5 @@
     <bean id="DisplayOneDishService" class="cn.edu.cugb.service.impl.DisplayOneDishServiceImpl"/>
     <bean id="GetOrderService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
     <bean id="GetShoppingCartService" class="cn.edu.cugb.service.impl.GetShoppingCartServiceImpl"/>
-
+    <bean id="CleanShoppingCartService" class="cn.edu.cugb.service.impl.CleanShoppingCartServiceImpl"/>
 </beans>
