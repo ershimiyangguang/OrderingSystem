@@ -233,14 +233,14 @@
     - 成功:true
     - 不成功:false
 ### service层
--[ ] ClearShoppingCartService
-  - boolean buyOrder(String uname);
+-[ ] CleanShoppingCartService
+  - boolean cleanShoppingCart(String uname);
     - uname: 用户名
     - 删除所有属于该用户且未支付的订单
     - 成功:true
     - 不成功:false
 ### servlet层
--[ ] ClearShoppingCartServlet
+-[ ] CleanShoppingCartServlet
   - 删除所有属于该用户且未支付的订单
   - 成功:{code:0}
   - 不成功:{code:1}
