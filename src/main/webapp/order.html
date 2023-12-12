@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>订单</title>
+    <link rel="stylesheet" href="static/css/header.css">
+    <link rel="stylesheet" href="static/css/order.css">
+    <link rel="stylesheet" href="static/css/updown.css">
+    <script src="static/js/updown.js"></script>
+    <script src="static/js/order.js"></script>
 </head>
 <body>
-    
+    <div class="updown">
+        <div class="up" onclick="toTop()">∧</div>
+        <div class="down" onclick="toBottom()">∨</div>
+    </div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="main.html"></a>
+            </div>
+            <ul class="nav">
+                <li><a href="main.html">首页</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+            </ul>
+            <div class="shopping" id="shopping">
+                <a href="login.html">登录后可查看订单</a>
+            </div>
+        </div>
+        <div class="order">
+            <div class="changePage">
+                <div class="changePageBtn" onclick="loadShoppingCart()">
+                    购物车
+                </div>
+                <div class="changePageBtn" onclick="loadOrder()">
+                    订单
+                </div>
+            </div>
+            <ul class="orderlist" id="orderlist">
+                
+            </ul>
+        </div>
+        <div class="pay" id="pay">
+            <div class="sumPrice">
+                合计：
+                <b id="sum">0元</b>
+            </div>
+            <div class="orderbtn">
+                <div class="clearbtn">
+                    清空购物车
+                </div>
+                <div class="paybtn" onclick="pay()">
+                    支付
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="submit"></div>
 </body>
 </html>

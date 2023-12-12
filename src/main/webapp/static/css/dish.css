@@ -55,6 +55,7 @@
     line-height: 25px;
     border-radius: 12px 0 0 12px;
     text-align: center;
+    cursor: pointer;
 }
 .count .changeNum2{
     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
@@ -64,6 +65,7 @@
     border-radius: 0 12px 12px 0;
     background-color: orange;
     text-align: center;
+    cursor: pointer;
 }
 .count input{
     width: 50px;

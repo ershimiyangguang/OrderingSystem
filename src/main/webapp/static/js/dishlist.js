@@ -72,11 +72,3 @@ function pageNumber() {
     let number = document.getElementById("pageNumber")
     number.innerText="第"+page+"页, 共"+maxPage+"页";
 }
-function toTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-function toBottom() {
-    document.body.scrollTop = window.outerHeight;
-    document.documentElement.scrollTop = window.outerHeight;
-}

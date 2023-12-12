@@ -44,7 +44,6 @@ create table orders
     u_name               varchar(50) not null,
     o_count              int,
     o_state              smallint,
-    primary key (d_id, u_name)
 );
 
 alter table orders add constraint FK_orders foreign key (u_name)

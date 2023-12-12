@@ -12,6 +12,7 @@ body {
 .wrapper {
     width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 .header {
     background-color: white;
@@ -59,7 +60,7 @@ body {
     background-size: contain;
     background-position: center center;
 }
-.header .order {
+.header .toOrder {
     display: block;
     width: 200px;
     height: 30px;

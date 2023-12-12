@@ -28,6 +28,7 @@ public class BuyServlet extends HttpServlet {
 
         if(buyService.buyOrder(uname)){
             out.println("{\"code\":\"0\"}");
+            response.sendRedirect("order.html");
         }
         else{
             out.println("{\"code\":\"1\"}");

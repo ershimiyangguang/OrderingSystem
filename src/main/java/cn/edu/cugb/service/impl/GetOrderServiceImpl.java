@@ -24,7 +24,7 @@ public class GetOrderServiceImpl implements GetOrderService {
 
         Map<Dish,Integer> map=new HashMap<Dish,Integer>();
 
-      List<Order> orders= orderDao.getOrderByUname(uname);
+      List<Order> orders= orderDao.getOrderByUname(uname,1);
 
       for(Order order :orders)
       {
