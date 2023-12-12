@@ -28,7 +28,7 @@ public class GetOrderServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("User");
         String uname = user.getUName();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         GetOrderService getOrderService = applicationContext.getBean("GetOrderService", GetOrderService.class);
 
         if(getOrderService.GetOrder(uname)==null){

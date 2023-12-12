@@ -20,7 +20,7 @@ public class DisplayOneDishServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         DisplayOneDishService displayOneDishService = applicationContext.getBean("DisplayOneDishService", DisplayOneDishService.class);
 
         int index = Integer.parseInt(request.getParameter("index"));

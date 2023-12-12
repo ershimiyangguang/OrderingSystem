@@ -231,7 +231,7 @@
     - uname: 用户名
     - 删除所有属于该用户且未支付的订单
     - 成功:true
-    - 不成功(没有记录可更改，即购物车为空):false
+    - 不成功:false
 ### service层
 -[ ] ClearShoppingCartService
   - boolean buyOrder(String uname);

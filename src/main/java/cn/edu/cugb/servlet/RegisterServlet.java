@@ -26,7 +26,7 @@ public class RegisterServlet extends HttpServlet {
         String key = request.getParameter("key");
         String value = request.getParameter("value");
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         RegisterService registerService = applicationContext.getBean("RegisterService", RegisterService.class);
 
         Message<User> registerUser = registerService.register(uname, upassword1, upassword2, key, value);

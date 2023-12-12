@@ -19,7 +19,7 @@ public class DishNumberServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
+        ClassPathXmlApplicationContext applicationContext = (ClassPathXmlApplicationContext) getServletContext().getAttribute("applicationContext");
         DishNumberService dishNumberService = applicationContext.getBean("DishNumberService",DishNumberService.class);
 
         int num = dishNumberService.dishNumberService();
