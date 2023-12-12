@@ -6,7 +6,6 @@
     <title>详情</title>
     <link rel="stylesheet" href="static/css/header.css">
     <link rel="stylesheet" href="static/css/dish.css">
-    <script src="static/js/islogin.js"></script>
     <script src="static/js/dish.js"></script>
 </head>
 <body>
@@ -34,10 +33,10 @@
                 <span id="dPrice">价格</span>
                 <div class="count">
                     <div class="changeNum1" onclick="add(-1)">-</div>
-                    <input id="number" type="text" onblur="add(0)" value="0">
+                    <input id="number" type="text" onblur="add(0)" value="1">
                     <div class="changeNum2" onclick="add(1)">+</div>
                 </div>
-                <div class="shop">加入购物车</div>
+                <div class="shop" onclick="addShoppingCart()">加入购物车</div>
             </div>
         </div>
     </div>

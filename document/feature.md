@@ -172,7 +172,7 @@
     - 存在: Map\<Dish,Integer>
     - 不存在:null
 ### servlet层
--[ ] GetOrderServlet
+-[ ] GetShoppingCartServlet
     - 存在:\[{dId:, dName:, dPrice:, dDescription:, dImage:,count:},
       {dId:, dName:, dPrice:, dDescription:, dImage:,count:}
       {dId:, dName:, dPrice:, dDescription:, dImage:,count:}

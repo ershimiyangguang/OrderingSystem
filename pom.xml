@@ -47,15 +47,13 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-
-<!--        Mockito的依赖-->
+<!--    Mockito的依赖-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>3.12.4</version>
             <scope>test</scope>
         </dependency>
-
 <!--    mysql的依赖-->
         <dependency>
             <groupId>mysql</groupId>
@@ -67,6 +65,17 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.2.3</version>
+        </dependency>
+<!--    支付宝沙箱的依赖-->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.34.47.ALL</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
         </dependency>
     </dependencies>
 

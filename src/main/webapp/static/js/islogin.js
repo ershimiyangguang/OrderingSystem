@@ -8,7 +8,7 @@ window.addEventListener("load",()=>{
                 if (res.code==0) {
                     let shop = document.getElementById("shopping");
                     shop.innerHTML="<div class='icon-shopping-cart'>" +
-                        "<a class='order' href=\"order.html\">我的订单</a>";
+                        "<a class='toOrder' href=\"order.html\">我的订单</a>";
                 }
             }
         }
