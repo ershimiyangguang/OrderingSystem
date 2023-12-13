@@ -31,7 +31,7 @@ public class AddOrderServiceImpl implements AddOrderService {
 
         NowOrder.setOState(0); // 默认为未购买状态
 
-        List<Order> orders=orderDao.getOrderByUname(uname);
+        List<Order> orders=orderDao.getOrderByUname(uname,0);
 
         boolean IsExistSameDish=false;
 
