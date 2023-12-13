@@ -24,10 +24,10 @@ public class AddOrderServiceImplTest {
     public void testAddOrder() {
         // 设置 OrderDao 的行为（例如，使用 Mockito.when().thenReturn()）
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
-     AddOrderServiceImpl addOrderService = applicationContext.getBean("addOrderService", AddOrderServiceImpl .class);
+     AddOrderServiceImpl addOrderService = applicationContext.getBean("AddOrderService", AddOrderServiceImpl .class);
         // 调用被测试的方法
 
-        boolean result = addOrderService.addOrder("test3", 7, 5);
+        boolean result = addOrderService.addOrder("test", 1, 5);
 
         System.out.println(result);
         // 验证结果
