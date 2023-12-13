@@ -3,8 +3,6 @@ package cn.edu.cugb.servlet;
 import cn.edu.cugb.bean.Dish;
 import cn.edu.cugb.bean.User;
 import cn.edu.cugb.service.GetOrderService;
-import cn.edu.cugb.service.GetShoppingCartService;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
@@ -15,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 @WebServlet("/GetOrderServlet")
