@@ -1,0 +1,151 @@
+.admin {
+    background-color: white;
+    margin:20px 0;
+    border-radius: 20px;
+    display: flex;
+}
+.admin .item {
+    margin-left: 50px;
+    position: relative;
+}
+.admin .item .choose {
+    position: absolute;
+    width: 180px;
+    height: 60px;
+    top:0px;
+    border-radius: 20px;
+    background-color: rgba(255, 128, 0, 0.1);
+    border: orange 1px solid;
+    transform: translate(0,100%);
+    transition: all 0.5s;
+}
+.admin .item b {
+    margin-left: -25px;
+    cursor:auto;
+}
+.admin .item li {
+    height: 60px;
+    width: 180px;
+    padding: 15px 25px;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.content {
+    margin:50px 100px;
+    position: relative;
+}
+.search {
+    display: flex;
+}
+.search input {
+    height: 40px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: orange 1px solid;
+    outline: none;
+}
+.search div {
+    margin-left: 30px;
+    background-color: orange;
+    height: 40px;
+    width: 100px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+table {
+    margin-top: 50px;
+}
+table tr {
+    text-align: left;
+    width: 400px;
+}
+table td,th {
+    border:black 1px solid ;
+    text-align: center;
+    height: 50px;
+    line-height: 30px;
+    font-size: 25px;
+    width: 200px;
+}
+table td div {
+    border:red 1px solid;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 25px;
+    color: red;
+    text-align: center;
+    width: 100px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.pageCtrl {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+}
+.pageCtrl .lastPage {
+    cursor: pointer;
+}
+.pageCtrl .nextPage {
+    cursor: pointer;
+}
+.info {
+    margin-top: 30px;
+    height: 40px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: orange 1px solid;
+    outline: none;
+}
+textarea {
+    margin-top: 30px;
+    width: 300px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding-left: 20px;
+    border: orange 1px solid;
+    outline: none;
+}
+.submit {
+    margin-top: 30px;
+    background-color: orange;
+    height: 40px;
+    width: 100px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border: 0;
+}
+.uploadbtn {
+    position: absolute;
+    margin-top: -35px;
+    background-color: orange;
+    height: 40px;
+    width: 400px;
+    line-height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border: 0;
+}
+.upload {
+    margin-top: 30px;
+    opacity: 0;
+}
