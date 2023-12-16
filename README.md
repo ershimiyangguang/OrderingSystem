@@ -7,8 +7,8 @@
 
 密码：111111
 ## 其他文档
-[功能文档](document/feature.md):介绍任务内容
+[功能文档](document/past/feature-user.md):介绍任务内容
 
-[流程文档](document/todo.md):介绍完成任务需要做的事
+[流程文档](document/past/todo.md):介绍完成任务需要做的事
 
 

@@ -71,6 +71,7 @@
     text-align: center;
     color: white;
     border: 0;
+    cursor: pointer;
 }
 .form .button2 {
     display: block;
@@ -85,4 +86,5 @@
     text-align: center;
     color: orange;
     border: 0;
+    cursor: pointer;
 }

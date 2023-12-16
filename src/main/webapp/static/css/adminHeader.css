@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: #eeeeee;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    border-radius: 20px;
+}
+.logo a{
+    background-image: url("../picture/logo.jpg");
+    background-position: 20px 0px;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 350px;
+    display: block;
+}
+.nav {
+    line-height: 100px;
+    font-size: 40px;
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+}

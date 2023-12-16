@@ -1,4 +1,4 @@
-# 功能
+# 用户端功能
 ## 1. 登录
 ### dao层
 -[ ] UserDao
@@ -29,6 +29,9 @@
     - {code:0}
     - 将User存入Session
   - 登录失败:{code:, reason:}
+### view层
+-[ ] login.html: 登录界面
+-[ ] main.html: 选菜界面
 ### view层
 -[ ] login.html: 登录界面
 -[ ] main.html: 选菜界面

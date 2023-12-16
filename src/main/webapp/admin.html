@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理</title>
+    <link rel="stylesheet" href="static/css/adminHeader.css">
+    <link rel="stylesheet" href="static/css/admin.css">
+    <script src="static/js/vue.js"></script>
+    <script src="static/js/admin.js"></script>
+    <script src="static/js/isAdminLogin.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <a href="main.html"></a>
+            </div>
+            <ul class="nav">
+                后台管理系统
+            </ul>
+        </div>
+        <div class="admin">
+            <ul class="item" id="item">
+                <div class="choose" id="choose"  v-bind:style="transform"></div>
+                <li><b>用户管理</b></li>
+                <li onclick="toGetUserPage()">查看用户</li>
+                <li onclick="toAddUserPage()">添加用户</li>
+                <li onclick="toUpdateUserPage()">编辑用户</li>
+                <li onclick="toDeleteUserPage()">删除用户</li>
+                <li><b>菜品管理</b></li>
+                <li onclick="toGetDishPage()">查看菜品</li>
+                <li onclick="toAddDishPage()">添加菜品</li>
+                <li onclick="toUploadImagePage()">上传图片</li>
+                <li onclick="toUpdateDishPage()">编辑菜品</li>
+                <li onclick="toDeleteDishPage()">删除菜品</li>
+            </ul>
+            <div class="content" id="getUser">
+                <div class="search">
+                    <input type="text" placeholder="用户名">
+                    <div>查找</div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>用户名</th>
+                        <th>密码</th>
+                    </tr>
+                    <tr>
+                        <td>加载中</td>
+                        <td>加载中</td>
+                    </tr>
+                </table>
+                <div class="pageCtrl">
+                    <div class="lastPage" onclick="lastUserPage();">上一页</div>
+                    <div>第{{currentPage}}页，共{{maxPage}}页</div>
+                    <div class="nextPage" onclick="nextUserPage();">下一页</div>
+                </div>
+            </div>
+            <div class="content" id="getDish">
+                <div class="search">
+                    <input type="text" placeholder="菜品名">
+                    <div>查找</div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>编号</th>
+                        <th>菜品名</th>
+                        <th>价格</th>
+                        <th>描述</th>
+                    </tr>
+                    <tr>
+                        <td>加载中加载中</td>
+                        <td>加载中加载中</td>
+                        <td>加载中加载中</td>
+                        <td>加载中加载中加载中加载中加载中加载中</td>
+                    </tr>
+                </table>
+                <div class="pageCtrl">
+                    <div class="lastPage" onclick="lastUserPage();">上一页</div>
+                    <div>第{{currentPage}}页，共{{maxPage}}页</div>
+                    <div class="nextPage" onclick="nextUserPage();">下一页</div>
+                </div>
+            </div>
+            <div class="content" id="addUser">
+                <input class="info" type="text" placeholder="用户名"><br>
+                <input class="info" type="text" placeholder="密码">
+                <div class="submit">添加</div>
+            </div>
+            <div class="content" id="updateUser">
+                <input class="info" type="text" placeholder="用户名"><br>
+                <input class="info" type="text" placeholder="密码">
+                <div class="submit">修改</div>
+            </div>
+            <div class="content" id="deleteUser">
+                <input class="info" type="text" placeholder="用户名">
+                <div class="submit">删除</div>
+            </div>
+
+            <div class="content" id="addDish">
+                <input class="info" type="text" placeholder="编号"><br>
+                <input class="info" type="text" placeholder="菜品名"><br>
+                <input class="info" type="text" placeholder="价格"><br>
+                <textarea cols="30" rows="5" placeholder="描述"></textarea><br>
+                <div class="submit">添加</div>
+            </div>
+            <div class="content" id="updateDish">
+                <input class="info" type="text" placeholder="编号"><br>
+                <input class="info" type="text" placeholder="菜品名"><br>
+                <input class="info" type="text" placeholder="价格"><br>
+                <textarea cols="30" rows="5" placeholder="描述"></textarea><br>
+                <div class="submit">添加</div>
+            </div>
+            <div class="content" id="deleteDish">
+                <input class="info" type="text" placeholder="编号"><br>
+                <div class="submit">以编号删除</div>
+                <input class="info" type="text" placeholder="菜品">
+                <div class="submit">以菜品名删除</div>
+            </div>
+            <div class="content" id="uploadImage">
+                <form method="post" action="up" enctype="Multipart/form-data">
+                    请选择上传菜品图片文件<br>
+                    图片格式为jpg<br>
+                    图片名与菜品名相同<br>
+                    图片宽高比为3:2 <br>
+                    <input id="file" class="upload" type="file" name="file" size="100"><br>
+                    <div id="imgsrc" class="uploadbtn" onclick="upload()">选择文件</div>
+                    <input class="submit" type="submit" value="上传">
+                    <input class="submit" type="reset" value="重置">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
