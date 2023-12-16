@@ -15,4 +15,5 @@ public interface OrderDao {
     boolean UpdateOrderStateByUname(String uname);
 
     boolean deleteOrderByUname(String uname);
+
 }

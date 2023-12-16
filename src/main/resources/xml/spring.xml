@@ -34,6 +34,9 @@
     <bean id="orderDao" class="cn.edu.cugb.dao.impl.OrderDaoImpl">
         <property name="jdbcTemplate" ref="JdbcTemplate"/>
     </bean>
+    <bean id="adminDao" class="cn.edu.cugb.dao.impl.AdminDaoImpl">
+        <property name="jdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
 <!--service层-->
 
     <bean id="LoginService" class="cn.edu.cugb.service.impl.LoginServiceImpl"/>

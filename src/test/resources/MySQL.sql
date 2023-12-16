@@ -1,16 +1,17 @@
 
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2023/12/8 10:40:08                           */
+/* Created on:     2023/12/16 20:12:57                          */
 /*==============================================================*/
 
-create database ordersystem;
+drop table if exists orders;
 
 drop table if exists Users;
 
+drop table if exists admin;
+
 drop table if exists dish;
 
-drop table if exists orders;
 
 /*==============================================================*/
 /* Table: Users                                                 */
@@ -20,6 +21,16 @@ create table Users
     u_name               varchar(50) not null,
     u_password           varchar(50),
     primary key (u_name)
+);
+
+/*==============================================================*/
+/* Table: admin                                                 */
+/*==============================================================*/
+create table admin
+(
+    a_name               varchar(50) not null,
+    a_password           varchar(50),
+    primary key (a_name)
 );
 
 /*==============================================================*/
@@ -44,13 +55,16 @@ create table orders
     u_name               varchar(50) not null,
     o_count              int,
     o_state              smallint,
+    primary key (d_id, u_name)
 );
 
 alter table orders add constraint FK_orders foreign key (u_name)
-    references Users (u_name) on delete restrict on update restrict;
+    references Users (u_name) on delete cascade on update cascade;
 
 alter table orders add constraint FK_orders2 foreign key (d_id)
-    references dish (d_id) on delete restrict on update restrict;
+    references dish (d_id) on delete cascade on update cascade;
+
+
 /*==============================================================*/
 /* 插入数据                                              */
 /*==============================================================*/
@@ -80,4 +94,9 @@ INSERT INTO `users`  VALUES
                          ( 'test', '1234');
 insert into orders VALUES
                        (1,'test',5,0),
-                       (2,'test',5,0);
+                       (2,'test',5,0),
+                       (1,'root',5,0),
+                       (2,'root',5,0),
+                       (3,'root',5,0);
+insert into admin  values
+                       ('admin','1234');
