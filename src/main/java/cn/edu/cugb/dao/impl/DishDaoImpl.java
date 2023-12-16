@@ -42,6 +42,7 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
         }
         return dish;
     }
+    @Override
     public boolean addDish(Dish dish){
 
         String sql="insert into dish values(?,?,?,?,?)";
@@ -54,6 +55,7 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
        }
         return true;
     }
+    @Override
    public Dish getDishByName(String dName){
         Dish dish;
         String sql="select *from dish where d_name=?";
@@ -65,6 +67,7 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
         }
         return dish;
    }
+   @Override
    public boolean updateDish(Dish dish){
         String sql="update dish set d_name=?,d_description=?,d_price=?,d_image=? where d_id=?";
        int i = jdbcTemplate.update(sql, dish.getDName(), dish.getDDescription(), dish.getDPrice(), dish.getDImage(),
@@ -74,11 +77,13 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
        else
            return false;
    }
+   @Override
     public boolean deleteDishById(int dId){
         String sql="delete from dish where d_id=?";
         int i = jdbcTemplate.update(sql, dId);
         return true;
     }
+    @Override
     public boolean deleteDishByName(String dName){
         String sql="delete from dish where d_name=?";
         int i = jdbcTemplate.update(sql, dName);

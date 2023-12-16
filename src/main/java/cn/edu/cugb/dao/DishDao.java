@@ -11,6 +11,10 @@ public interface DishDao {
 
     List<Dish> getDishList(int start, int length);
 
-   Dish getDishById(int dId);
-
+    Dish getDishById(int dId);
+    boolean addDish(Dish dish);
+    Dish getDishByName(String dName);
+    boolean updateDish(Dish dish);
+    boolean deleteDishById(int dId);
+    boolean deleteDishByName(String dName);
 }
