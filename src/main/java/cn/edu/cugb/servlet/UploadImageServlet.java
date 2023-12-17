@@ -23,12 +23,12 @@ public class UploadImageServlet extends HttpServlet {
         String fileName = cd.substring(cd.lastIndexOf("=")+2, cd.length()-1);
 
         if (fileName == null || !fileName.toLowerCase().endsWith(".jpg")) {
-            out.println("{\"code\":\"1\",\"reason\":\"null or not .jpg\"}");
+            out.println("上传文件格式有误或文件为空");
         }
         else{
             String filePath = request.getServletContext().getRealPath("/");
             part.write(filePath+"/images/"+fileName);
-            out.println("{\"code\":\"0\"}");
+            out.println("上传成功！");
         }
     }
 
