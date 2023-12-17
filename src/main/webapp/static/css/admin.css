@@ -66,6 +66,7 @@ table {
 table tr {
     text-align: left;
     width: 400px;
+    cursor: pointer;
 }
 table td,th {
     border:black 1px solid ;

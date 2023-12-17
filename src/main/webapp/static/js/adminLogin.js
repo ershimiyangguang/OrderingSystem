@@ -8,12 +8,12 @@ function change() {
     document.getElementById("verify").src="static/code_img/code"+key+".png"
 }
 function login() {
-    let uname = document.getElementById("uname").value;
+    let uname = document.getElementById("aname").value;
     let password = document.getElementById("password").value;
     let value = document.getElementById("value").value;
     let xhr = new XMLHttpRequest();
     xhr.withCredentials=true;
-    xhr.open("post", "LoginServlet", true);
+    xhr.open("post", "AdminLoginServlet", true);
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
@@ -23,11 +23,11 @@ function login() {
                     window.open("admin.html", "_self");
                 }else{
                     change();
-                    document.getElementById("uname").style="border:orange 1px solid;"
+                    document.getElementById("aname").style="border:orange 1px solid;"
                     document.getElementById("value").style="border:orange 1px solid;"
                     document.getElementById("password").style="border:orange 1px solid;"
                     if (res.code==1) {
-                        document.getElementById("uname").style="border:red 1px solid;"
+                        document.getElementById("aname").style="border:red 1px solid;"
                     }else if (res.code==2) {
                         document.getElementById("password").style="border:red 1px solid;"
                     }else{
@@ -40,5 +40,5 @@ function login() {
             }
         }
     }
-    xhr.send("uname="+uname+"&password="+password+"&key="+key+"&value="+value);
+    xhr.send("aname="+uname+"&apassword="+password+"&key="+key+"&value="+value);
 }

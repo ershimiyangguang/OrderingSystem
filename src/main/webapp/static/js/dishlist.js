@@ -20,7 +20,7 @@ function getMaxPage() {
             }
         }
     }
-    xhr.send("page="+page);
+    xhr.send();
 }
 function nextPage() {
     if (page<maxPage) {
