@@ -37,17 +37,53 @@
             </ul>
             <div class="content" id="getUser">
                 <div class="search">
-                    <input type="text" placeholder="用户名">
-                    <div>查找</div>
+                    <input type="text" placeholder="用户名" v-model:value="uname">
+                    <div onclick="searchUser()">查找</div>
                 </div>
                 <table class="table">
                     <tr>
                         <th>用户名</th>
                         <th>密码</th>
                     </tr>
-                    <tr>
-                        <td>加载中</td>
-                        <td>加载中</td>
+                    <tr v-if="userList[0]" onclick="toUpdateUser(0)">
+                        <td>{{userList[0].uname}}</td>
+                        <td>{{userList[0].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[1]" onclick="toUpdateUser(1)">
+                        <td>{{userList[1].uname}}</td>
+                        <td>{{userList[1].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[2]" onclick="toUpdateUser(2)">
+                        <td>{{userList[2].uname}}</td>
+                        <td>{{userList[2].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[3]" onclick="toUpdateUser(3)">
+                        <td>{{userList[3].uname}}</td>
+                        <td>{{userList[3].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[4]" onclick="toUpdateUser(4)">
+                        <td>{{userList[4].uname}}</td>
+                        <td>{{userList[4].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[5]" onclick="toUpdateUser(5)">
+                        <td>{{userList[5].uname}}</td>
+                        <td>{{userList[5].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[6]" onclick="toUpdateUser(6)">
+                        <td>{{userList[6].uname}}</td>
+                        <td>{{userList[6].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[7]" onclick="toUpdateUser(7)">
+                        <td>{{userList[7].uname}}</td>
+                        <td>{{userList[7].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[8]" onclick="toUpdateUser(8)">
+                        <td>{{userList[8].uname}}</td>
+                        <td>{{userList[8].upassword}}</td>
+                    </tr>
+                    <tr  v-if="userList[9]" onclick="toUpdateUser(9)">
+                        <td>{{userList[9].uname}}</td>
+                        <td>{{userList[9].upassword}}</td>
                     </tr>
                 </table>
                 <div class="pageCtrl">
@@ -58,8 +94,8 @@
             </div>
             <div class="content" id="getDish">
                 <div class="search">
-                    <input type="text" placeholder="菜品名">
-                    <div>查找</div>
+                    <input type="text" placeholder="编号" v-model:value="did">
+                    <div onclick="searchDish()">查找</div>
                 </div>
                 <table class="table">
                     <tr>
@@ -68,61 +104,85 @@
                         <th>价格</th>
                         <th>描述</th>
                     </tr>
-                    <tr>
-                        <td>加载中加载中</td>
-                        <td>加载中加载中</td>
-                        <td>加载中加载中</td>
-                        <td>加载中加载中加载中加载中加载中加载中</td>
+                    <tr onclick="toUpdateDish(0)">
+                        <td v-if="dishList[0]">{{dishList[0].dId}}</td>
+                        <td v-if="dishList[0]">{{dishList[0].dName}}</td>
+                        <td v-if="dishList[0]">{{dishList[0].dPrice}}</td>
+                        <td v-if="dishList[0]">{{dishList[0].dDescription}}</td>
+                    </tr>
+                    <tr onclick="toUpdateDish(1)">
+                        <td v-if="dishList[1]">{{dishList[1].dId}}</td>
+                        <td v-if="dishList[1]">{{dishList[1].dName}}</td>
+                        <td v-if="dishList[1]">{{dishList[1].dPrice}}</td>
+                        <td v-if="dishList[1]">{{dishList[1].dDescription}}</td>
+                    </tr>
+                    <tr onclick="toUpdateDish(2)">
+                        <td v-if="dishList[2]">{{dishList[2].dId}}</td>
+                        <td v-if="dishList[2]">{{dishList[2].dName}}</td>
+                        <td v-if="dishList[2]">{{dishList[2].dPrice}}</td>
+                        <td v-if="dishList[2]">{{dishList[2].dDescription}}</td>
+                    </tr>
+                    <tr onclick="toUpdateDish(3)">
+                        <td v-if="dishList[3]">{{dishList[3].dId}}</td>
+                        <td v-if="dishList[3]">{{dishList[3].dName}}</td>
+                        <td v-if="dishList[3]">{{dishList[3].dPrice}}</td>
+                        <td v-if="dishList[3]">{{dishList[3].dDescription}}</td>
+                    </tr>
+                    <tr onclick="toUpdateDish(4)">
+                        <td v-if="dishList[4]">{{dishList[4].dId}}</td>
+                        <td v-if="dishList[4]">{{dishList[4].dName}}</td>
+                        <td v-if="dishList[4]">{{dishList[4].dPrice}}</td>
+                        <td v-if="dishList[4]">{{dishList[4].dDescription}}</td>
                     </tr>
                 </table>
                 <div class="pageCtrl">
-                    <div class="lastPage" onclick="lastUserPage();">上一页</div>
+                    <div class="lastPage" onclick="lastDishPage();">上一页</div>
                     <div>第{{currentPage}}页，共{{maxPage}}页</div>
-                    <div class="nextPage" onclick="nextUserPage();">下一页</div>
+                    <div class="nextPage" onclick="nextDishPage();">下一页</div>
                 </div>
             </div>
             <div class="content" id="addUser">
-                <input class="info" type="text" placeholder="用户名"><br>
-                <input class="info" type="text" placeholder="密码">
-                <div class="submit">添加</div>
+                <input class="info" type="text" placeholder="用户名" v-model:value="uname"><br>
+                <input class="info" type="text" placeholder="密码" v-model:value="password">
+                <div class="submit" onclick="addUserBtn();">添加</div>
             </div>
             <div class="content" id="updateUser">
-                <input class="info" type="text" placeholder="用户名"><br>
-                <input class="info" type="text" placeholder="密码">
-                <div class="submit">修改</div>
+                <input class="info" type="text" placeholder="用户名" v-model:value="uname"><br>
+                <input class="info" type="text" placeholder="密码" v-model:value="password">
+                <div class="submit" onclick="updateUserBtn()">修改</div>
             </div>
             <div class="content" id="deleteUser">
-                <input class="info" type="text" placeholder="用户名">
-                <div class="submit">删除</div>
+                <input class="info" type="text" placeholder="用户名" v-model:value="uname">
+                <div class="submit" onclick="deleteUserBtn()">删除</div>
             </div>
 
             <div class="content" id="addDish">
-                <input class="info" type="text" placeholder="编号"><br>
-                <input class="info" type="text" placeholder="菜品名"><br>
-                <input class="info" type="text" placeholder="价格"><br>
-                <textarea cols="30" rows="5" placeholder="描述"></textarea><br>
-                <div class="submit">添加</div>
+                <input class="info" type="text" placeholder="编号" v-model:value="did"><br>
+                <input class="info" type="text" placeholder="菜品名" v-model:value="dname"><br>
+                <input class="info" type="text" placeholder="价格" v-model:value="dprice"><br>
+                <textarea cols="30" rows="5" placeholder="描述" v-model:value="ddesc"></textarea><br>
+                <div class="submit" onclick="addDishBtn()">添加</div>
             </div>
             <div class="content" id="updateDish">
-                <input class="info" type="text" placeholder="编号"><br>
-                <input class="info" type="text" placeholder="菜品名"><br>
-                <input class="info" type="text" placeholder="价格"><br>
-                <textarea cols="30" rows="5" placeholder="描述"></textarea><br>
-                <div class="submit">添加</div>
+                <input class="info" type="text" placeholder="编号" v-model:value="did"><br>
+                <input class="info" type="text" placeholder="菜品名"  v-model:value="dname"><br>
+                <input class="info" type="text" placeholder="价格" v-model:value="dprice"><br>
+                <textarea cols="30" rows="5" placeholder="描述"  v-model:value="ddesc"></textarea><br>
+                <div class="submit" onclick="updateDishBtn()">修改</div>
             </div>
             <div class="content" id="deleteDish">
-                <input class="info" type="text" placeholder="编号"><br>
-                <div class="submit">以编号删除</div>
-                <input class="info" type="text" placeholder="菜品">
-                <div class="submit">以菜品名删除</div>
+                <input class="info" type="text" placeholder="编号" v-model:value="did"><br>
+                <div class="submit" onclick="deleteDishByIdBtn()">以编号删除</div>
+                <input class="info" type="text" placeholder="菜品" v-model:value="dname">
+                <div class="submit" onclick="deleteDishByNameBtn()">以菜品名删除</div>
             </div>
             <div class="content" id="uploadImage">
-                <form method="post" action="up" enctype="Multipart/form-data">
+                <form method="post" action="UploadImageServlet" enctype="Multipart/form-data">
                     请选择上传菜品图片文件<br>
                     图片格式为jpg<br>
                     图片名与菜品名相同<br>
                     图片宽高比为3:2 <br>
-                    <input id="file" class="upload" type="file" name="file" size="100"><br>
+                    <input id="file" class="upload" type="file" name="myfile"><br>
                     <div id="imgsrc" class="uploadbtn" onclick="upload()">选择文件</div>
                     <input class="submit" type="submit" value="上传">
                     <input class="submit" type="reset" value="重置">

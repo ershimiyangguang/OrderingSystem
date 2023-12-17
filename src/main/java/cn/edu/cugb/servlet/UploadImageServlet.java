@@ -1,6 +1,7 @@
 package cn.edu.cugb.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/UploadImageServlet")
+@MultipartConfig
 public class UploadImageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -17,14 +19,15 @@ public class UploadImageServlet extends HttpServlet {
 
         Part part = request.getPart("myfile");
 
-        String fileName = part.getSubmittedFileName();
+        String cd = part.getHeader("Content-Disposition");
+        String fileName = cd.substring(cd.lastIndexOf("=")+2, cd.length()-1);
 
         if (fileName == null || !fileName.toLowerCase().endsWith(".jpg")) {
             out.println("{\"code\":\"1\",\"reason\":\"null or not .jpg\"}");
         }
         else{
             String filePath = request.getServletContext().getRealPath("/");
-            part.write(filePath+"/"+fileName);
+            part.write(filePath+"/images/"+fileName);
             out.println("{\"code\":\"0\"}");
         }
     }

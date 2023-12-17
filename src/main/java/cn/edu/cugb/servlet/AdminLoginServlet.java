@@ -29,7 +29,7 @@ public class AdminLoginServlet extends HttpServlet {
         Message<Admin> loginAdmin = adminLoginService.login(uname, upassword, key, value);
 
         if(loginAdmin.getCode()==0){
-            request.getSession().setAttribute("Admin",loginAdmin.getReason());
+            request.getSession().setAttribute("Admin",loginAdmin.getObject());
             out.println("{\"code\":\"0\"}");
 
         }

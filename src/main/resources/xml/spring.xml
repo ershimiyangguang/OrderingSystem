@@ -58,6 +58,7 @@
     <bean id="UpdateDishService" class="cn.edu.cugb.service.impl.UpdateDishServiceImpl"/>
     <bean id="DeleteDishByIdService" class="cn.edu.cugb.service.impl.DeleteDishByIdServiceImpl"/>
     <bean id="DeleteDishByNameService" class="cn.edu.cugb.service.impl.DeleteDishByNameServiceImpl"/>
+    <bean id="GetUserByNameService" class="cn.edu.cugb.service.impl.GetUserByNameServiceImpl"/>
 
 
 </beans>
