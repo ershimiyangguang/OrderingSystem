@@ -16,7 +16,7 @@ public class AddDishServiceTest {
        AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
         // 调用被测试的方法
 
-        Message<Dish> result = addDishService.addDish("33","testdish","29","Test");
+        Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
 
         System.out.println(result);
         // 验证结果

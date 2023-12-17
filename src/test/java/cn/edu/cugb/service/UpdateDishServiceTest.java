@@ -12,7 +12,7 @@ public class UpdateDishServiceTest {
        UpdateDishService updateDishService = applicationContext.getBean("UpdateDishService", UpdateDishService .class);
         // 调用被测试的方法
 
-        int result = updateDishService.updateDish("33","test3dish","29","Test").getCode();
+        int result = updateDishService.updateDish("33","test3dish","djow","Test").getCode();
 
         System.out.println(result);
         // 验证结果
