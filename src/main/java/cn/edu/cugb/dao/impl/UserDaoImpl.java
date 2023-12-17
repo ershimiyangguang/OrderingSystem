@@ -64,8 +64,11 @@ public class UserDaoImpl implements cn.edu.cugb.dao.UserDao {
    }
    @Override
    public boolean deleteUser(String uName){
+       boolean flag=false;
         String sql="delete from users where u_Name=?";
         int i = jdbcTemplate.update(sql, uName);
-        return true;
+       if(i>=1)
+           flag=true;
+       return flag;
    }
 }

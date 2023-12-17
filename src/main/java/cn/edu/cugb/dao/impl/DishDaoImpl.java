@@ -79,15 +79,21 @@ public class DishDaoImpl implements cn.edu.cugb.dao.DishDao {
    }
    @Override
     public boolean deleteDishById(int dId){
+        boolean flag=false;
         String sql="delete from dish where d_id=?";
         int i = jdbcTemplate.update(sql, dId);
-        return true;
+       if(i>=1)
+           flag=true;
+       return flag;
     }
     @Override
     public boolean deleteDishByName(String dName){
+        boolean flag=false;
         String sql="delete from dish where d_name=?";
         int i = jdbcTemplate.update(sql, dName);
-        return true;
+        if(i>=1)
+            flag=true;
+        return flag;
     }
 
 
