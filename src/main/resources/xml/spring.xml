@@ -49,4 +49,15 @@
     <bean id="GetOrderService" class="cn.edu.cugb.service.impl.GetOrderServiceImpl"/>
     <bean id="GetShoppingCartService" class="cn.edu.cugb.service.impl.GetShoppingCartServiceImpl"/>
     <bean id="CleanShoppingCartService" class="cn.edu.cugb.service.impl.CleanShoppingCartServiceImpl"/>
+    <bean id="AdminLoginService" class="cn.edu.cugb.service.impl.AdminLoginServiceImpl"/>
+    <bean id="GetUserListService" class="cn.edu.cugb.service.impl.GetUserListServiceImpl"/>
+    <bean id="GetUserNumberService" class="cn.edu.cugb.service.impl.GetUserNumberServiceImpl"/>
+    <bean id="UpdateUserService" class="cn.edu.cugb.service.impl.UpdateUserServiceImpl"/>
+    <bean id="DeleteUserService" class="cn.edu.cugb.service.impl.DeleteUserServiceImpl"/>
+    <bean id="AddDishService" class="cn.edu.cugb.service.impl.AddDishServiceImpl"/>
+    <bean id="UpdateDishService" class="cn.edu.cugb.service.impl.UpdateDishServiceImpl"/>
+    <bean id="DeleteDishByIdService" class="cn.edu.cugb.service.impl.DeleteDishByIdServiceImpl"/>
+    <bean id="DeleteDishByNameService" class="cn.edu.cugb.service.impl.DeleteDishByNameServiceImpl"/>
+
+
 </beans>
