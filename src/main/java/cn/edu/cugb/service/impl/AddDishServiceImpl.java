@@ -12,20 +12,20 @@ public class AddDishServiceImpl implements AddDishService {
 
     DishDao dishDao;
 
-    int CodeNumberLimit=200; // 字符限定数
+    int CodeNumberLimit=50; // 字符限定数
     @Override
     public Message<Dish> addDish(String did, String dName, String dPrice, String dDesc) {
         Message<Dish> message=new Message<Dish>();
 
 
-        if(did==null)
+        if(did.equals(""))
         {
             message.setCode(1);
             message.setReason("菜品号为空");
             return  message;
         }
 
-        if(dName==null)
+        if(dName.equals(""))
         {
             message.setCode(1);
             message.setReason("菜品名为空");
@@ -39,19 +39,33 @@ public class AddDishServiceImpl implements AddDishService {
             return  message;
         }
 
-        if(dPrice==null) {
+        if(dPrice.equals("")) {
            message.setCode(3);
            message.setReason("菜品价格为空");
            return  message;
         }
 
-        if (Integer.valueOf(dPrice) <= 0) {
+
+        float Price=0;
+
+        try {
+
+          Price=Float.parseFloat(dPrice);
+
+        } catch (NumberFormatException e) {
+            // 如果转换失败，则抛出NumberFormatException，表示不是数字
             message.setCode(3);
-            message.setReason("价格不合法");
+            message.setReason("价格输入不合法,价格输入不是数字");
             return message;
         }
 
-        if(dDesc==null) {
+        if (Price <= 0) {
+            message.setCode(3);
+            message.setReason("价格不合法，不可小于0");
+            return message;
+        }
+
+        if(dDesc.equals("")) {
             message.setCode(4);
             message.setReason("菜品描述为空");
             return  message;
@@ -65,7 +79,7 @@ public class AddDishServiceImpl implements AddDishService {
         }
 
 
-        String DishImage="images/"+did+".jpg";
+        String DishImage="images/"+dName+".jpg";
 
         Dish dish=new Dish();
         dish.setDId(Integer.valueOf(did));

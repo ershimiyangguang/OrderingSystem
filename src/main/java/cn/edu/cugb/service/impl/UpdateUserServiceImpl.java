@@ -16,19 +16,30 @@ public class UpdateUserServiceImpl implements UpdateUserService {
     @Override
     public Message<User> updateUser(String uName, String uPassword) {
         Message<User> message=new Message<User>();
+
+        if(uPassword.equals(""))
+        {
+            message.setCode(2);
+            message.setReason("密码不可为空");
+            return message;
+        }
+
         boolean IsUpdateSuccess=false;
         User user =new User();
         user.setUPassword(uPassword);
         user.setUName(uName);
         IsUpdateSuccess=userDao.updateUser(user);
+
         if(!IsUpdateSuccess)
         {
             message.setCode(1);
             message.setReason("被修改用户不存在");
+            return  message;
         }
-        else {
+
+
             message.setCode(0);
-        }
+
         return message;
     }
 }
