@@ -15,12 +15,16 @@ public class UploadImageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
 
-        String fileName = request.getParameter("fileName");
+        Part part = request.getPart("myfile");
+
+        String fileName = part.getSubmittedFileName();
 
         if (fileName == null || !fileName.toLowerCase().endsWith(".jpg")) {
             out.println("{\"code\":\"1\",\"reason\":\"null or not .jpg\"}");
         }
         else{
+            String filePath = request.getServletContext().getRealPath("/");
+            part.write(filePath+"/"+fileName);
             out.println("{\"code\":\"0\"}");
         }
     }
