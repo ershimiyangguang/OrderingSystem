@@ -44,7 +44,7 @@ public class DisplayOneDishServletTest {
 
         // 验证输出是否包含预期的参数值
         String output = stringWriter.toString().trim(); // 假设这是Servlet的输出结果
-        String actual = "{\"dId\":\"1\",\"dName\":\"皮蛋瘦肉粥\",\"dDescription\":\"美味可口!\",\"dImage\":\"images/500022.jpg\"}";
+        String actual = "{\"dId\":\"1\",\"dName\":\"皮蛋瘦肉粥\",\"dDescription\":\"美味可口!\",\"dImage\":\"images/17.jpg\"}";
 
         Assert.assertEquals(output,actual);
     }

@@ -32,9 +32,9 @@ public class AlipayTool {
         //request对象
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
         //商家的post请求接口
-        request.setNotifyUrl("http://localhost:8080/OrderingSystem/BuyServlet");//回调--post请求
+        request.setNotifyUrl("http://172.25.28.188:8080/OrderingSystem/BuyServlet");//回调--post请求
         //商家的get请求接口
-        request.setReturnUrl("http://localhost:8080/OrderingSystem/BuyServlet");//回调--get请求
+        request.setReturnUrl("http://172.25.28.188:8080/OrderingSystem/BuyServlet");//回调--get请求
 
         String replace = UUID.randomUUID().toString().replace("-", "");
 
