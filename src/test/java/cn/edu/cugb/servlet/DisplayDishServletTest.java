@@ -43,7 +43,7 @@ public class DisplayDishServletTest {
 
         // 验证输出是否包含预期的参数值
         String output = stringWriter.toString().trim(); // 假设这是Servlet的输出结果
-        String actual = "[{\"dId\":\"1\",\"dName\":\"皮蛋瘦肉粥\",\"dDescription\":\"美味可口!\",\"dImage\":\"images/500022.jpg\"},{\"dId\":\"2\",\"dName\":\"清炒时蔬\",\"dDescription\":\"时令绿色蔬菜\",\"dImage\":\"images/500046.jpg\"},{\"dId\":\"3\",\"dName\":\"炸酱面\",\"dDescription\":\"京味小吃！\",\"dImage\":\"images/500045.jpg\"},{\"dId\":\"4\",\"dName\":\"肉丝茄子\",\"dDescription\":\"美味可口！\",\"dImage\":\"images/500044.jpg\"},{\"dId\":\"5\",\"dName\":\"西红柿炒鸡蛋\",\"dDescription\":\"经典搭配！\",\"dImage\":\"images/500043.jpg\"}]";
+        String actual = "[{\"dId\":\"1\",\"dName\":\"皮蛋瘦肉粥\",\"dDescription\":\"美味可口!\",\"dImage\":\"images/17.jpg\"},{\"dId\":\"2\",\"dName\":\"清炒时蔬\",\"dDescription\":\"时令绿色蔬菜\",\"dImage\":\"images/2.jpg\"},{\"dId\":\"3\",\"dName\":\"炸酱面\",\"dDescription\":\"京味小吃！\",\"dImage\":\"images/3.jpg\"},{\"dId\":\"4\",\"dName\":\"肉丝茄子\",\"dDescription\":\"美味可口！\",\"dImage\":\"images/4.jpg\"},{\"dId\":\"5\",\"dName\":\"西红柿炒鸡蛋\",\"dDescription\":\"经典搭配！\",\"dImage\":\"images/5.jpg\"}]";
 
         Assert.assertEquals(output,actual);
     }

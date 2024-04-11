@@ -71,6 +71,12 @@ public class Message<T> {
     }
 
     public String toString() {
-        return "Message{code = " + code + ", reason = " + reason + ", object = " + object + "}";
+        if (object!=null) {
+            return "Message{code = " + code + ", reason = "
+                    + reason + ", object = " + object + "}";
+        }else{
+            return "Message{code = " + code + ", reason = "
+                    + reason+"}";
+        }
     }
 }

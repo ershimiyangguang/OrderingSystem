@@ -82,7 +82,7 @@ public class UpdateDishServiceImpl implements UpdateDishService {
 
 
 
-        String DishImage="images/"+dName+".jpg";
+        String DishImage="images/"+did+".jpg";
 
         Dish dish=new Dish();
         dish.setDId(Integer.valueOf(did));
