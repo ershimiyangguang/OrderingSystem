@@ -1,4 +1,4 @@
-package cn.edu.cugb.service;
+package test.service.black2;
 
 import cn.edu.cugb.bean.Dish;
 import cn.edu.cugb.bean.Message;
@@ -18,6 +18,7 @@ public class AddDishServiceTest {
         //调用被测试的方法
         Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
         // 验证结果
+        System.out.println("测试用例01输出：");
         System.out.println(result);
     }
     @Test
@@ -26,6 +27,7 @@ public class AddDishServiceTest {
         AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
         //不同的测试用例使用不同的参数
         Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
+        System.out.println("测试用例02输出：");
         System.out.println(result);
     }
 }

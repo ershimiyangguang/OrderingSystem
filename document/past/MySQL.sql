@@ -3,7 +3,8 @@
 /* DBMS name:      MySQL 5.0                                    */
 /* Created on:     2023/12/16 20:12:57                          */
 /*==============================================================*/
-
+create database ordersystem;
+use ordersystem;
 drop table if exists orders;
 
 drop table if exists Users;
