@@ -46,6 +46,7 @@ public class LoginServiceImplTest {  // 一个方法代表一个测试用例
     }
     @Test
     public void LoginServiceImplTest04() throws IOException {
+
         // 通过 Spring 的方法获取对象，要获取其他对象将 getBean 的第一个字符串参数 “LoginService” 改成其他要测试的类名
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("xml/spring.xml");
         LoginServiceImpl loginService = applicationContext.getBean("LoginService", LoginServiceImpl.class);

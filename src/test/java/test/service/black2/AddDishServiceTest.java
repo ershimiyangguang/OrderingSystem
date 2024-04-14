@@ -16,9 +16,9 @@ public class AddDishServiceTest {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
         //调用被测试的方法
-        Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
+        Message<Dish> result = addDishService.addDish("33"," 返回消息对象代码为2，原因为“菜品名字数过多”（结果）","10","Test");
         // 验证结果
-        System.out.println("测试用例01输出：");
+        System.out.println("测试用例10输出：");
         System.out.println(result);
     }
     @Test
@@ -109,5 +109,6 @@ public class AddDishServiceTest {
         System.out.println("测试用例10输出：");
         System.out.println(result);
     }
+
 }
 
