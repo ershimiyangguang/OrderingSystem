@@ -19,6 +19,9 @@ public class RegisterServiceImpl implements RegisterService {
     @Autowired
     @Qualifier("userDao")
     UserDao userDao;
+
+
+
     @Override
     public Message<User> register(String uname, String password1, String password2, String key, String value) throws IOException {
 
@@ -40,6 +43,8 @@ public class RegisterServiceImpl implements RegisterService {
         String TrueValue=properties.getProperty(key); // 验证码的值
 
         // 先对验证码进行验证
+
+
 
         if(!TrueValue.equals(value))
         {
