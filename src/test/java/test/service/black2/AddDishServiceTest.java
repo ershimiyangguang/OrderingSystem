@@ -16,7 +16,7 @@ public class AddDishServiceTest {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
         //调用被测试的方法
-        Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
+        Message<Dish> result = addDishService.addDish("","鱼香肉丝","30","物美价廉");
         // 验证结果
         System.out.println("测试用例01输出：");
         System.out.println(result);
@@ -26,8 +26,12 @@ public class AddDishServiceTest {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
         AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
         //不同的测试用例使用不同的参数
-        Message<Dish> result = addDishService.addDish("33","testdish","wjjwoei","Test");
+        Message<Dish> result = addDishService.addDish("20","鱼香肉丝","30","物美价廉");
         System.out.println("测试用例02输出：");
         System.out.println(result);
+    }
+    public void AddDishServiceTest03(){
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("xml/spring.xml");
+        AddDishServiceImpl addDishService = applicationContext.getBean("AddDishService", AddDishServiceImpl .class);
     }
 }
